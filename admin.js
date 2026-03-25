@@ -1,5 +1,5 @@
 // Configuration
-const BACKEND_URL = window.location.origin;
+const BACKEND_URL = 'web-production-1929f.up.railway.app';
 
 // Check if already logged in
 window.addEventListener('DOMContentLoaded', () => {
