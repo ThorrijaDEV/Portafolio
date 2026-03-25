@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thorrija - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <button class="logo" onclick="scrollToTop()">Thorrija</button>
+            <nav class="desktop-nav">
+                <button onclick="scrollToSection('about')">Sobre mí</button>
+                <button onclick="scrollToSection('skills')">Habilidades</button>
+                <button onclick="scrollToSection('projects')">Proyectos</button>
+                <button onclick="scrollToSection('media')">Media</button>
+                <button onclick="scrollToSection('contact')">Contacto</button>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span id="menu-icon">☰</span>
+            </button>
+        </div>
+        <nav id="mobile-nav" class="mobile-nav hidden">
+            <button onclick="scrollToSection('about'); toggleMobileMenu()">Sobre mí</button>
+            <button onclick="scrollToSection('skills'); toggleMobileMenu()">Habilidades</button>
+            <button onclick="scrollToSection('projects'); toggleMobileMenu()">Proyectos</button>
+            <button onclick="scrollToSection('media'); toggleMobileMenu()">Media</button>
+            <button onclick="scrollToSection('contact'); toggleMobileMenu()">Contacto</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-title">
+                <h1>Thorrija</h1>
+                <div class="title-underline"></div>
+            </div>
+            <p class="hero-subtitle">Creador tecnológico | Automatización | IA | Creatividad digital</p>
+            <p class="hero-description">Constructor autodidacta de herramientas, sistemas y contenido digital. Aprendo desmontando sistemas y reconstruyéndolos mediante prueba, error y curiosidad.</p>
+            
+            <div class="aliases-grid">
+                <div class="alias-card">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                    </svg>
+                    <p class="alias-name">Thorrija_Live</p>
+                    <p class="alias-desc">contenido y streaming</p>
+                </div>
+                <div class="alias-card">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 18L22 12L16 6M8 6L2 12L8 18" />
+                    </svg>
+                    <p class="alias-name">Thorrija_Dev</p>
+                    <p class="alias-desc">programación y tecnología</p>
+                </div>
+                <div class="alias-card">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
+                        <polyline points="7.5 19.79 7.5 14.6 3 12" />
+                        <polyline points="21 12 16.5 14.6 16.5 19.79" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                    <p class="alias-name">Thorrija_Games</p>
+                    <p class="alias-desc">gaming y proyectos relacionados</p>
+                </div>
+                <div class="alias-card">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                    </svg>
+                    <p class="alias-name">Thorrija</p>
+                    <p class="alias-desc">identidad general</p>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('projects')">Ver Proyectos</button>
+                <button class="btn btn-outline" onclick="scrollToSection('skills')">Habilidades</button>
+                <button class="btn btn-outline" onclick="scrollToSection('contact')">Contacto</button>
+            </div>
+
+            <div class="scroll-indicator">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre mí</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">Thorrija aprende tecnología mediante experimentación, ingeniería inversa y curiosidad constante. Mi enfoque se basa en el aprendizaje autodidacta, la mentalidad maker y el interés por entender cómo funcionan los sistemas, mezclando creatividad con tecnología.</p>
+                    <div class="tagline-box">
+                        <p class="tagline">"Construyo ideas entre código, sonido y creatividad digital."</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                            <p>Aprendizaje autodidacta</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <p>Mentalidad maker</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.35-4.35" />
+                                </svg>
+                            </div>
+                            <p>Curiosidad constante</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-glow"></div>
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534515538060-80212d73acb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHxuZW9ufGVufDB8fHxibHVlfDE3NzM0MTIyODJ8MA&ixlib=rb-4.1.0&q=85" alt="Tech aesthetic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-bg-alt"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Habilidades</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card skill-programming">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>Programación y tecnología</h3>
+                    </div>
+                    <ul>
+                        <li><span>▹</span> Python</li>
+                        <li><span>▹</span> JavaScript</li>
+                        <li><span>▹</span> HTML</li>
+                        <li><span>▹</span> CSS</li>
+                        <li><span>▹</span> Automatización de sistemas</li>
+                        <li><span>▹</span> Arquitecturas de software</li>
+                    </ul>
+                </div>
+                <div class="skill-card skill-security">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Sistemas y ciberseguridad</h3>
+                    </div>
+                    <ul>
+                        <li><span>▹</span> Arch Linux</li>
+                        <li><span>▹</span> Terminal avanzada</li>
+                        <li><span>▹</span> Conceptos básicos de redes</li>
+                        <li><span>▹</span> OSINT</li>
+                        <li><span>▹</span> Investigación digital</li>
+                        <li><span>▹</span> Laboratorios de seguridad controlados</li>
+                    </ul>
+                </div>
+                <div class="skill-card skill-creative">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                                <path d="M2 2l7.586 7.586" />
+                                <circle cx="11" cy="11" r="2" />
+                            </svg>
+                        </div>
+                        <h3>Creatividad digital</h3>
+                    </div>
+                    <ul>
+                        <li><span>▹</span> Edición de vídeo profesional con CapCut</li>
+                        <li><span>▹</span> Edición básica con DaVinci Resolve</li>
+                        <li><span>▹</span> Grabación de voz</li>
+                        <li><span>▹</span> Producción de audio con FL Studio</li>
+                        <li><span>▹</span> Edición de audio con Audacity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Proyectos</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf" alt="Red Neuronal Modular">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Red Neuronal Modular</h3>
+                        <p>Arquitectura de red neuronal modular creada desde cero en Python junto a un colaborador. Sistema experimental basado en plugins para extender funcionalidades de la inteligencia artificial.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">IA</span>
+                            <span class="tag">Arquitectura</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg" alt="Sistema de IA Personal">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de IA Personal</h3>
+                        <p>Sistema personal de inteligencia artificial en desarrollo diseñado para automatizar tareas digitales y mejorar flujos de trabajo.</p>
+                        <div class="project-tags">
+                            <span class="tag">IA</span>
+                            <span class="tag">Automatización</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4" alt="Automatizaciones Personales">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automatizaciones Personales</h3>
+                        <p>Automatizaciones personales y herramientas para el día a día.</p>
+                        <div class="project-tags">
+                            <span class="tag">Automatización</span>
+                            <span class="tag">Herramientas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="Proyectos de Edición">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyectos de Edición</h3>
+                        <p>Proyectos de edición de vídeo que han superado las 20.000 visualizaciones.</p>
+                        <div class="project-tags">
+                            <span class="tag">Edición</span>
+                            <span class="tag">Video</span>
+                            <span class="tag">Creatividad</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1653387300291-bfa1eeb90e16" alt="Investigación OSINT">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Investigación OSINT</h3>
+                        <p>Investigación OSINT y exploración de herramientas de ciberseguridad en entornos controlados.</p>
+                        <div class="project-tags">
+                            <span class="tag">OSINT</span>
+                            <span class="tag">Ciberseguridad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="media">
+        <div class="section-bg-alt"></div>
+        <div class="container-sm">
+            <div class="section-header">
+                <h2>Media y Creatividad</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="media-alert">
+                <svg class="alert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <p>Mis canales de YouTube y Twitch están temporalmente abandonados por temas personales y familiares.</p>
+            </div>
+            <div class="media-grid">
+                <a href="#" class="media-link" target="_blank">
+                    <svg class="media-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                    </svg>
+                    <h3>YouTube</h3>
+                </a>
+                <a href="https://twitch.tv/thorrija_live" class="media-link" target="_blank">
+                    <svg class="media-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
+                    </svg>
+                    <h3>Twitch</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="section-bg"></div>
+        <div class="container-sm">
+            <div class="section-header">
+                <h2>Filosofía</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="philosophy-content">
+                <svg class="quote-left" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                </svg>
+                <svg class="quote-right" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 7h-3l-2 4v6h6v-6h-3zM10 7H7L5 11v6h6v-6h-3z" />
+                </svg>
+                <div class="philosophy-box">
+                    <p class="philosophy-text">Aprendo rompiendo sistemas, analizándolos y reconstruyéndolos. La curiosidad es el motor de todo lo que creo.</p>
+                </div>
+            </div>
+            <div class="philosophy-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Experimentación</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Análisis</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Reconstrucción</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-bg-alt"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2>Contacto</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <h3>Envíame un mensaje</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                            <span id="submitBtnText">Enviar Mensaje</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-links">
+                    <div>
+                        <h3>Conecta conmigo</h3>
+                        <p class="contact-desc">Encuentra más sobre mi trabajo y proyectos en estas plataformas.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/ThorrijaDEV" class="social-link" target="_blank">
+                            <div class="social-icon">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="social-label">GitHub</p>
+                                <p class="social-url">github.com/ThorrijaDEV</p>
+                            </div>
+                        </a>
+                        <a href="mailto:thorrija.contact@gmail.com" class="social-link">
+                            <div class="social-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="social-label">Email</p>
+                                <p class="social-url">thorrija.contact@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://twitch.tv/thorrija_live" class="social-link" target="_blank">
+                            <div class="social-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="social-label">Twitch</p>
+                                <p class="social-url">twitch.tv/thorrija_live</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="aliases-box">
+                        <h4>Mis alias</h4>
+                        <div class="aliases-list">
+                            <p><span>Thorrija_Live</span> → contenido y streaming</p>
+                            <p><span>Thorrija_Dev</span> → programación y tecnología</p>
+                            <p><span>Thorrija_Games</span> → gaming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand">Thorrija</h3>
+                    <p class="footer-desc">Creador tecnológico autodidacta mezclando código, IA y creatividad digital.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Identidades</h4>
+                    <ul class="footer-list">
+                        <li>Thorrija_Live</li>
+                        <li>Thorrija_Dev</li>
+                        <li>Thorrija_Games</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Thorrija. Todos los derechos reservados.</p>
+                <div class="footer-right">
+                    <p class="footer-love">
+                        Hecho con 
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                        y curiosidad
+                    </p>
+                    <a href="admin.html" class="admin-link" title="Admin">•</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <h4 id="toastTitle"></h4>
+            <p id="toastMessage"></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
