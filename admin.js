@@ -1,5 +1,5 @@
 // Configuration
-const BACKEND_URL = 'web-production-1929f.up.railway.app';
+const BACKEND_URL = 'https://portafolio-backend-uq8p.onrender.com';
 
 // Check if already logged in
 window.addEventListener('DOMContentLoaded', () => {
