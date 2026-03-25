@@ -1,5 +1,5 @@
 // Configuration
-const BACKEND_URL = window.location.origin;
+const BACKEND_URL = 'web-production-1929f.up.railway.app';
 
 // Header scroll effect
 window.addEventListener('scroll', () => {
