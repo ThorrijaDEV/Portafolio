@@ -63,14 +63,6 @@ const BACKEND_URL = window.location.origin;
 const BACKEND_URL = 'https://tu-backend.com';
 ```
 
-## 🔐 Acceso al Panel Admin
-
-1. Ve a: `admin.html` (o añade `/admin.html` a tu URL)
-2. También hay un link discreto (•) en el footer de la página principal
-
-**Credenciales:**
-- **Email**: thorrija.games@gmail.com
-- **Contraseña**: 2+2=PescaditoFrito@
 
 ## 📋 Funcionalidades
 
@@ -83,12 +75,6 @@ const BACKEND_URL = 'https://tu-backend.com';
 ✅ Animaciones y efectos hover
 ✅ Diseño responsive
 
-### Panel Admin (admin.html)
-✅ Login con JWT
-✅ Visualización de todos los mensajes
-✅ Información del remitente (nombre, email, fecha)
-✅ Contador de mensajes totales
-✅ Cerrar sesión
 
 ## 🎨 Personalización
 
