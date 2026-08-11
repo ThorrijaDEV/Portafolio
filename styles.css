@@ -651,6 +651,12 @@ section {
 }
 
 /* Projects Section */
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .projects-grid {
     display: grid;
     gap: 2rem;
