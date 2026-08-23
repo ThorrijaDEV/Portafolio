@@ -1,156 +1,75 @@
-# Portfolio Thorrija - Versión HTML Pura
+# Portfolio de Thorrija
+
 https://thorrijadev.github.io/Portafolio/
-Este es el portfolio completo de Thorrija convertido a **HTML, CSS y JavaScript vanilla** (sin frameworks).
 
-## 📁 Archivos incluidos
+Portfolio personal construido con **HTML, CSS y JavaScript vanilla** — sin frameworks, sin dependencias de runtime, sin imágenes externas.
+
+## Diseño
+
+Lenguaje visual minimalista inspirado en el diseño editorial premium: paleta neutra (blanco, negro, grises) con un único color de acento, tipografía Inter con jerarquía marcada, mucho espacio en blanco y superficies con bordes sutiles y sombras suaves.
+
+- **Temas claro y oscuro** completos, con detección automática de `prefers-color-scheme`, toggle manual persistente en `localStorage` y script inline anti-flash.
+- **Animaciones contenidas**: revelado al hacer scroll con `IntersectionObserver` y easing natural (`cubic-bezier(0.16, 1, 0.3, 1)`), microinteracciones en hover y respeto total a `prefers-reduced-motion`.
+- **Progressive enhancement**: sin JavaScript todo el contenido es visible; las animaciones solo se activan si hay JS.
+- **Responsive** verificado sin overflow horizontal en desktop, laptop, tablet y móvil.
+
+## Estructura
 
 ```
-html-version/
-├── index.html          # Página principal del portfolio
-├── admin.html          # Panel de administración
-├── styles.css          # Estilos globales
-├── admin.css           # Estilos específicos del admin
-├── main.js             # JavaScript de la página principal
-├── admin.js            # JavaScript del panel admin
-└── README.md           # Este archivo
+├── index.html        # Página principal
+├── admin.html        # Panel de administración de mensajes
+├── styles.css        # Design tokens + estilos del sitio
+├── admin.css         # Estilos del panel admin
+├── main.js           # Tema, navegación, animaciones y formulario
+├── admin.js          # Login y listado de mensajes
+├── robots.txt
+├── sitemap.xml
+└── assets/           # Capturas de proyectos y favicon
 ```
 
-## 🚀 Cómo usar
-
-### Opción 1: Servidor local simple (desarrollo)
-
-Si tienes Python instalado:
+## Desarrollo local
 
 ```bash
-# En la carpeta html-version/
-python3 -m http.server 8000
+python3 -m http.server 8081
+# http://localhost:8081
 ```
 
-Luego abre: `http://localhost:8000`
+## Backend del formulario
 
-### Opción 2: Live Server (VSCode)
+El formulario de contacto envía `POST` a la API desplegada en Render:
 
-1. Instala la extensión "Live Server" en VSCode
-2. Click derecho en `index.html` → "Open with Live Server"
-
-### Opción 3: Subir a hosting
-
-Puedes subir estos archivos a cualquier hosting estático:
-- **Netlify**: Arrastra la carpeta a netlify.com/drop
-- **Vercel**: Conecta con GitHub o sube directamente
-- **GitHub Pages**: Sube a un repositorio y activa GitHub Pages
-- **Hosting tradicional**: Sube vía FTP/SFTP
-
-## ⚙️ Configuración del Backend
-
-**IMPORTANTE**: El código HTML está configurado para usar el backend en el mismo dominio.
-
-### En desarrollo local:
-
-1. El backend debe estar corriendo en `http://localhost:8001`
-2. Los archivos HTML usan `window.location.origin` para detectar el backend automáticamente
-
-### En producción:
-
-Si tu backend está en un dominio diferente, edita en:
-
-**main.js** y **admin.js**:
-```javascript
-// Cambiar esta línea:
-const BACKEND_URL = window.location.origin;
-
-// Por tu URL de backend:
-const BACKEND_URL = 'https://tu-backend.com';
+```js
+const BACKEND_URL = 'https://portafolio-backend-uq8p.onrender.com';
 ```
 
+Endpoints utilizados:
 
-## 📋 Funcionalidades
+| Endpoint | Método | Uso |
+|---|---|---|
+| `/api/contact` | POST | Enviar mensaje de contacto |
+| `/api/admin/login` | POST | Autenticación del panel |
+| `/api/admin/messages` | GET | Listar mensajes (Bearer token) |
 
-### Página Principal (index.html)
-✅ 7 secciones completas
-✅ Navegación suave entre secciones
-✅ Header fijo con efecto scroll
-✅ Menú móvil responsive
-✅ Formulario de contacto funcional (conectado al backend)
-✅ Animaciones y efectos hover
-✅ Diseño responsive
+## Despliegue
 
+GitHub Pages desde la rama `main`. Cualquier push a `main` publica automáticamente.
 
-## 🎨 Personalización
+## Auditoría
 
-### Cambiar colores
+Comprobaciones realizadas antes de publicar:
 
-Edita `styles.css` y busca los colores principales:
-- Púrpura: `#a855f7`, `#9333ea`
-- Azul: `#3b82f6`, `#60a5fa`
+- Sin overflow horizontal a 1440 / 1024 / 768 / 375 px
+- Sin errores de consola JavaScript
+- Contraste AA en texto principal y secundario
+- Navegación por teclado, skip-link y estados de foco visibles
+- `robots.txt`, `sitemap.xml`, Open Graph, canonical y favicon SVG
 
-### Cambiar fuentes
-
-En `index.html` y `admin.html`, modifica el link de Google Fonts y actualiza en `styles.css`:
-```css
-body {
-    font-family: 'TuFuente', sans-serif;
-}
-```
-
-### Modificar contenido
-
-Todo el contenido está directamente en `index.html`:
-- Textos
-- Proyectos
-- Habilidades
-- Enlaces sociales
-
-## 🔗 URLs importantes
+## Enlaces
 
 - **GitHub**: https://github.com/ThorrijaDEV
 - **Twitch**: https://twitch.tv/thorrija_live
 - **Email**: thorrija.contact@gmail.com
 
-## 🐛 Solución de problemas
-
-### El formulario no envía mensajes
-
-1. Verifica que el backend esté corriendo
-2. Abre la consola del navegador (F12) y busca errores
-3. Comprueba que la URL del backend sea correcta
-4. Verifica que el backend tenga CORS habilitado
-
-### El admin no carga mensajes
-
-1. Verifica las credenciales
-2. Comprueba la URL del backend
-3. Mira la consola para errores de autenticación
-
-### Estilos no se ven bien
-
-1. Asegúrate de que `styles.css` y `admin.css` estén en la misma carpeta
-2. Limpia la caché del navegador (Ctrl+F5)
-
-## 📱 Compatibilidad
-
-- ✅ Chrome/Edge (últimas versiones)
-- ✅ Firefox (últimas versiones)
-- ✅ Safari (últimas versiones)
-- ✅ Responsive (móvil, tablet, desktop)
-
-## 📝 Notas técnicas
-
-- No usa jQuery ni ninguna librería externa
-- JavaScript vanilla (ES6+)
-- CSS puro con variables CSS
-- Fetch API para las peticiones al backend
-- LocalStorage para el token de admin
-- Intersection Observer para animaciones
-- SVG inline para los iconos
-
-## 🚢 Despliegue recomendado
-
-1. **Frontend (estos archivos HTML)**: Netlify, Vercel, GitHub Pages
-2. **Backend (FastAPI)**: Railway, Render, Fly.io, o tu servidor propio
-
-Asegúrate de configurar las variables de entorno y CORS en el backend para que acepte peticiones desde tu dominio de frontend.
-
 ---
 
-**Desarrollado para Thorrija** © 2025
+© Thorrija
