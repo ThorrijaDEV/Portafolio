@@ -104,31 +104,15 @@
                 <h2 class="section-title reveal delay-1" id="projects-title">Software real,<br>publicado y documentado.</h2>
                 <p class="section-lede reveal delay-2">Una selección de las herramientas que mantengo públicamente en GitHub. Cada una nace de un problema propio.</p>
 
-                <div class="project-grid">                    <article class="project-card span-2 reveal">
-                        <a class="project-media" href="https://github.com/ThorrijaDEV/sigscan" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-                            <img src="assets/sigscan-demo.png" alt="Sigscan escáner de firmas con carving de JPEG y PNG embebidos" loading="lazy" width="1100" height="520">
-                        </a>
-                        <div class="project-body">
-                            <div class="project-head">
-                                <h3><a href="https://github.com/ThorrijaDEV/sigscan" target="_blank" rel="noopener">Sigscan</a></h3>
-                                <span class="project-index">01</span>
-                            </div>
-                            <p>Escáner forense de firmas mágicas en Go: detecta JPEG/PNG/ELF embebidos y los puede tallar a disco. Solo stdlib, binario estático.</p>
-                            <ul class="tag-row" role="list">
-                                <li>Go</li><li>Forense</li><li>Binario</li><li>CLI</li>
-                            </ul>
-                            <a class="arrow-link" href="https://github.com/ThorrijaDEV/sigscan" target="_blank" rel="noopener">Ver en GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
+                <div class="project-grid">
+                    <article class="project-card span-2 reveal">
                         <a class="project-media" href="https://github.com/ThorrijaDEV/dnsdrill" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
                             <img src="assets/dnsdrill-demo.png" alt="Consultas DNS de dnsdrill con registros MX y salida JSON" loading="lazy" width="1100" height="520">
                         </a>
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/dnsdrill" target="_blank" rel="noopener">Dnsdrill</a></h3>
-                                <span class="project-index">2</span>
+                                <span class="project-index">01</span>
                             </div>
                             <p>Cliente DNS que construye los paquetes RFC 1035 a mano con struct: punteros de compresión, fallback TCP en truncados, 7 tipos de registro. La caja transparente donde se ve el cable.</p>
                             <ul class="tag-row" role="list">
@@ -145,7 +129,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://thorrijadev.github.io/neondrift/" target="_blank" rel="noopener">Neondrift</a></h3>
-                                <span class="project-index">3</span>
+                                <span class="project-index">02</span>
                             </div>
                             <p>Endless runner arcade en un solo HTML: física y colisiones propias, chiptune generado con WebAudio (cero assets), partículas y récord local. Juegable desde el portafolio.</p>
                             <ul class="tag-row" role="list">
@@ -162,7 +146,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/syspeek" target="_blank" rel="noopener">Syspeek</a></h3>
-                                <span class="project-index">4</span>
+                                <span class="project-index">03</span>
                             </div>
                             <p>Dashboard TUI de sistema en curses puro — cero dependencias. CPU por núcleo, memoria, tasas de red y top procesos leídos directamente de /proc con parsers hechos a mano.</p>
                             <ul class="tag-row" role="list">
@@ -179,7 +163,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://thorrijadev.github.io/hackdeck/" target="_blank" rel="noopener">Hackdeck</a></h3>
-                                <span class="project-index">5</span>
+                                <span class="project-index">04</span>
                             </div>
                             <p>Deck offline de utilidades pentest en un solo HTML (~15 KB): base64, hex, JWT, SHA-1/256/512, XOR, César, UUID. Cero red, cero telemetría — todo corre en tu navegador.</p>
                             <ul class="tag-row" role="list">
@@ -196,7 +180,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/canarytrap" target="_blank" rel="noopener">Canarytrap</a></h3>
-                                <span class="project-index">6</span>
+                                <span class="project-index">05</span>
                             </div>
                             <p>Canary tokens autoalojados: claves AWS falsas, .env señuelo y web bugs que disparan un webhook en el instante en que alguien los toca. Solo stdlib, tus logs nunca salen de tu VPS.</p>
                             <ul class="tag-row" role="list">
@@ -213,7 +197,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/loglens" target="_blank" rel="noopener">Loglens</a></h3>
-                                <span class="project-index">7</span>
+                                <span class="project-index">06</span>
                             </div>
                             <p>SIEM de bolsillo: detecta fuerza bruta SSH, enumeración de usuarios, escaneos web y picos de error directamente en tus logs — cero dependencias, 100% offline, informe HTML.</p>
                             <ul class="tag-row" role="list">
@@ -230,7 +214,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/reconkit" target="_blank" rel="noopener">Reconkit</a></h3>
-                                <span class="project-index">8</span>
+                                <span class="project-index">07</span>
                             </div>
                             <p>Multi-tool de reconocimiento para activos autorizados: subdominios vía CT logs, escáner de puertos asíncrono y dir busting — todo en sesiones SQLite con informe HTML unificado.</p>
                             <ul class="tag-row" role="list">
@@ -247,7 +231,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/clickwheel" target="_blank" rel="noopener">Clickwheel + Console</a></h3>
-                                <span class="project-index">9</span>
+                                <span class="project-index">08</span>
                             </div>
                             <p>Dos reproductores, una idea: música que se opera. App Android estilo iPod con click-wheel háptico (Compose) que reproduce música local y busca en YouTube Music; y una consola web hi-fi vintage sin dependencias.</p>
                             <ul class="tag-row" role="list">
@@ -264,7 +248,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/sysledger" target="_blank" rel="noopener">Sysledger</a></h3>
-                                <span class="project-index">10</span>
+                                <span class="project-index">09</span>
                             </div>
                             <p>El libro mayor de tu máquina Linux: fotografía periódica de paquetes, servicios y parámetros del kernel en SQLite, y diffs entre dos instantes para saber qué cambió y cuándo.</p>
                             <ul class="tag-row" role="list">
@@ -281,7 +265,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/port-authority" target="_blank" rel="noopener">Port Authority</a></h3>
-                                <span class="project-index">11</span>
+                                <span class="project-index">10</span>
                             </div>
                             <p>Un historiador de puertos de red para Linux: registra quién escuchó dónde y cuándo en una bitácora SQLite local, para que puedas preguntar qué pasó mientras no mirabas.</p>
                             <ul class="tag-row" role="list">
@@ -298,7 +282,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/wifi-time-machine" target="_blank" rel="noopener">Wi-Fi Time Machine</a></h3>
-                                <span class="project-index">12</span>
+                                <span class="project-index">11</span>
                             </div>
                             <p>Una máquina del tiempo para tu entorno inalámbrico: captura el espectro Wi-Fi periódicamente, guárdalo en SQLite y reprodúcelo después para ver cómo cambió tu red a lo largo del tiempo.</p>
                             <ul class="tag-row" role="list">
@@ -315,7 +299,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/ble-radar" target="_blank" rel="noopener">BLE Radar</a></h3>
-                                <span class="project-index">13</span>
+                                <span class="project-index">12</span>
                             </div>
                             <p>Radar Bluetooth en tiempo real: dispositivos BLE cercanos, niveles de señal RSSI, historial y reproducción de sesiones grabadas.</p>
                             <ul class="tag-row" role="list">
@@ -332,7 +316,7 @@
                         <div class="project-body">
                             <div class="project-head">
                                 <h3><a href="https://github.com/ThorrijaDEV/process-ecosystem-monitor" target="_blank" rel="noopener">Process Ecosystem Monitor</a></h3>
-                                <span class="project-index">14</span>
+                                <span class="project-index">13</span>
                             </div>
                             <p>Convierte la actividad del sistema en un ecosistema vivo: procesos, recursos y cambios de estado en tiempo real desde la terminal.</p>
                             <ul class="tag-row" role="list">
