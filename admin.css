@@ -1,9 +1,148 @@
 /* ==========================================================================
-   Admin — uses tokens from styles.css
+   Admin — usa tokens de styles.css
    ========================================================================== */
+
+/* Puente de compatibilidad: styles.css se redefinió con nombres de token
+   nuevos (--line, --text-2, --radius) y ya no expone los que admin.css
+   y admin.html necesitan. Sin este bloque el panel se renderiza sin
+   bordes, con radios por defecto y texto invisible. */
+:root {
+    --border: var(--line);
+    --border-strong: var(--line-strong);
+    --radius-card: var(--radius);
+    --text-secondary: var(--text-2);
+    --text-tertiary: var(--text-3);
+}
 
 body {
     background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+}
+
+/* Controles de formulario y botones que styles.css ya no define */
+
+.hidden {
+    display: none !important;
+}
+
+.field {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-3);
+}
+
+.field input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    transition: border-color 0.3s var(--ease-soft);
+}
+
+.field input::placeholder {
+    color: var(--text-3);
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s var(--ease-soft), border-color 0.3s var(--ease-soft), color 0.3s var(--ease-soft);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.btn-primary:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.btn-ghost {
+    background: transparent;
+    border-color: var(--line-strong);
+    color: var(--text-2);
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.85rem 1.15rem;
+    transform: translateX(-50%);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    box-shadow: var(--shadow-1);
+    animation: admin-toast-in 0.35s var(--ease);
+}
+
+.toast-content strong {
+    display: block;
+    font-size: 0.875rem;
+}
+
+.toast-content span {
+    font-size: 0.8125rem;
+    color: var(--text-2);
+}
+
+@keyframes admin-toast-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toast {
+        animation: none;
+    }
 }
 
 /* Login */
