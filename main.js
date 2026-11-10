@@ -72,10 +72,15 @@
     var menuBtn = document.querySelector('.menu-btn');
     var mobileNav = document.getElementById('mobileNav');
 
+    function t(key, fallback) {
+        var i18n = window.THORRIJA_I18N;
+        return i18n && typeof i18n.t === 'function' ? i18n.t(key) : fallback;
+    }
+
     function setMenu(open) {
         if (!menuBtn || !mobileNav) return;
         menuBtn.setAttribute('aria-expanded', String(open));
-        menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        menuBtn.setAttribute('aria-label', open ? t('menu_close', 'Cerrar menú') : t('menu_open', 'Abrir menú'));
         mobileNav.classList.toggle('open', open);
         document.documentElement.style.overflow = open ? 'hidden' : '';
 
@@ -223,14 +228,22 @@
 
     if (copyBtn) {
         var labelEl = copyBtn.querySelector('.copy-btn-label');
+
+        function refreshLabel() {
+            originalLabel = copyBtn.textContent.trim();
+        }
+
         var originalLabel = copyBtn.textContent.trim();
+
+        // Re-capture label when language changes (copyBtn uses data-i18n)
+        document.addEventListener('thorrija:lang', refreshLabel);
 
         copyBtn.addEventListener('click', function () {
             var value = copyBtn.getAttribute('data-copy') || '';
 
             function confirm() {
-                if (labelEl) labelEl.textContent = 'Dirección copiada';
-                showToast('Dirección copiada al portapapeles');
+                if (labelEl) labelEl.textContent = t('toast_copied', 'Dirección copiada');
+                showToast(t('toast_copied', 'Dirección copiada') + ' al portapapeles');
                 window.clearTimeout(confirm.timer);
                 confirm.timer = window.setTimeout(function () {
                     labelEl.textContent = originalLabel;
@@ -238,7 +251,7 @@
             }
 
             function fallback() {
-                showToast('No se pudo copiar: ' + value);
+                showToast(t('toast_copy_failed', 'No se pudo copiar') + ': ' + value);
             }
 
             if (navigator.clipboard && navigator.clipboard.writeText) {
