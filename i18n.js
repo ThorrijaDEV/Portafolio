@@ -143,25 +143,25 @@ const I18N = {
     nav_perfil: "Profile",
     nav_trabajo: "Work",
     nav_capacidades: "Capabilities",
-    nav_certificaciones: "Certificates",
+    nav_certificaciones: "Certifications",
     nav_contacto: "Contact",
-    nav_showcase: "Demos",
-    nav_informe: "PDF Report",
+    nav_showcase: "Interactive Demos",
+    nav_informe: "Technical Report PDF",
 
     // Hero
-    hero_statement: "I build software that observes,<br>records and explains living systems.",
-    hero_lede: "Software developer focused on Linux, AI, and cybersecurity. I design CLI and TUI tools that measure what normally goes unnoticed — the wireless environment, Bluetooth devices, process life — and record it so it can be studied calmly.",
-    hero_work: "View work",
+    hero_statement: "I build software that observes,<br>records, and explains living systems.",
+    hero_lede: "Software developer focused on Linux, artificial intelligence, and cybersecurity. I design CLI and TUI tools that measure what normally goes unnoticed — the wireless environment, Bluetooth devices, and process activity — and record it so it can be studied calmly.",
+    hero_work: "View the work",
     hero_profile: "Profile",
     hero_github: "GitHub",
     hero_showcase: "Interactive demos",
-    hero_informe: "PDF report",
+    hero_informe: "Technical PDF report",
 
     // About
-    about_title: "I learn by dismantling<br>systems and rebuilding them.",
-    about_lead: "I'm a self-taught developer. My practical approach to understanding technology: take a system, open it, break it, and reassemble it until the behavior makes sense.",
-    about_p1: "That method became a collection of tools focused on observing what normally goes unnoticed — the wireless environment, Bluetooth devices, process life — and recording it to study calmly.",
-    about_p2: "I apply the same approach to AI and cybersecurity: a modular neural network built from scratch, defensive log analysis tools, authorized asset reconnaissance, and forensic utilities that read the real structure of files.",
+    about_title: "I learn by taking systems apart<br>and rebuilding them.",
+    about_lead: "I'm a self-taught developer. My practical approach to understanding technology: take a system, open it, break it, and put it back together until the behavior makes sense.",
+    about_p1: "That method became a collection of tools focused on observing what normally goes unnoticed — the wireless environment, Bluetooth devices, process life — and recording it so it can be studied calmly.",
+    about_p2: "I apply the same approach to AI and cybersecurity: a modular neural network built from scratch, defensive log analysis tools, authorized asset discovery, and forensic utilities that read the real structure of files.",
     about_p3: "Between projects I also edit video and produce audio. Code and digital creativity are not separate worlds for me.",
     about_system: "Main system",
     about_system_val: "Arch Linux",
@@ -173,7 +173,7 @@ const I18N = {
     about_opensource_val: "github.com/ThorrijaDEV",
     about_identity: "Identity",
     about_identity_val: "Thorrija_Dev · Thorrija_Live · Thorrija_Games",
-    about_form: "Form",
+    about_form: "Background",
     about_form_val: "Self-taught · maker · out of curiosity",
 
     // Manifesto
@@ -205,7 +205,7 @@ const I18N = {
     proj_forja: "Forja",
     proj_forja_desc: "Rust compiler that translates a u8-like language to SILICON assembly: memory variables, ALU on the accumulator, flag-based jumps, print_num with division by subtraction, end-to-end tests on real VM.",
     proj_polea: "Polea",
-    proj_polea_desc: "Dependency-free pub/sub messaging broker in C++17: own binary protocol with 13-byte header, length-delimited framing and CRC-32, ordered forwarding with a single thread over poll(2), bounded queues with backpressure, CLI client to publish/listen to topics.",
+    proj_polea_desc: "Dependency-free pub/sub messaging broker in C++17: own binary protocol with 13-byte header, length-delimited framing and CRC-32, ordered forwarding with a single thread over poll(2), bounded queues with backpressure, CLI client to publish and listen to topics.",
     proj_cask: "Cask",
     proj_cask_desc: "Append-only content-addressable store in pure C: own binary format with CRC32 + SHA-256, content deduplication, automatic recovery from corruption/truncation.",
     proj_neondrift: "Neondrift",
@@ -223,15 +223,15 @@ const I18N = {
     proj_reconkit: "Reconkit",
     proj_reconkit_desc: "Multi-tool reconnaissance for authorized assets: subdomains via CT logs, async port scanner, dir busting — SQLite sessions, unified HTML report.",
     proj_wtm: "Wi-Fi Time Machine",
-    proj_wtm_desc: "A time machine for your wireless environment: periodically captures Wi-Fi spectrum, stores in SQLite, replays to see network changes over time.",
+    proj_wtm_desc: "A time machine for your wireless environment: periodically captures the Wi-Fi spectrum, stores it in SQLite, and replays it to see how your network changed over time.",
     proj_ble: "BLE Radar",
     proj_ble_desc: "Real-time Bluetooth radar: nearby BLE devices, RSSI signal levels, history, recorded session playback.",
     proj_sysledger: "Sysledger",
-    proj_sysledger_desc: "Ledger of your Linux machine: periodic snapshots of packages/services/kernel params in SQLite, diffs between instants.",
+    proj_sysledger_desc: "Ledger of your Linux machine: periodic snapshots of packages/services/kernel parameters in SQLite, diffs between instants.",
     proj_portauthority: "Port Authority",
     proj_portauthority_desc: "Network port historian for Linux: records who listened where/when in local SQLite ledger.",
     proj_pem: "Process Ecosystem Monitor",
-    proj_pem_desc: "Turns system activity into living ecosystem: processes, resources, state changes in real time from terminal.",
+    proj_pem_desc: "Turns system activity into a living ecosystem: processes, resources, state changes in real time from terminal.",
     proj_genart: "Terminal Generative Engine",
     proj_genart_desc: "Deterministic procedural generative art for terminal: flowfield, plasma, attractor with shareable seeds and O(1) frame seeking.",
 
@@ -244,15 +244,15 @@ const I18N = {
     skills_creative: "Digital creativity",
 
     // Certificates
-    certs_eyebrow: "Certificates",
-    certs_title: "Two foundations<br>that support the rest.",
+    certs_eyebrow: "Certifications",
+    certs_title: "Two foundations<br>that support everything else.",
     certs_lede: "Math provides the reasoning and Python provides the language. Everything else on this page builds on those two pillars.",
     certs_field_math: "Mathematics",
     certs_name_math: "Math 101",
-    certs_desc_math: "Mathematical foundations: algebra, functions, logic. Basis for reasoning about algorithms, measuring complexity, understanding crypto internals.",
+    certs_desc_math: "Mathematical foundations: algebra, functions, and logic. The basis for reasoning about algorithms, measuring complexity, and understanding cryptography internals.",
     certs_field_prog: "Programming",
     certs_name_prog: "Python 1",
-    certs_desc_prog: "Intro to programming in Python: syntax, variables, control structures, functions, types. First language everything here started with.",
+    certs_desc_prog: "Introduction to programming in Python: syntax, variables, control structures, functions, and types. The first language everything here started with.",
 
     // Contact
     contact_eyebrow: "Contact",
@@ -266,7 +266,7 @@ const I18N = {
 
     // Footer
     footer_showcase: "Interactive demos:",
-    footer_pdf: "PDF report:",
+    footer_pdf: "Technical PDF report:",
     footer_year: "© 2026 Thorrija — Technical presentation for UMA",
   },
 };
