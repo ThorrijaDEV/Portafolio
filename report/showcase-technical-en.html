@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>THORRIJA — Engineering Showcase — Technical Dossier (English)</title>
+<style>
+@page {
+  size: A4;
+  margin: 2cm 2cm 2cm 2cm;
+  @bottom-center {
+    content: "THORRIJA — Engineering Showcase — Technical Dossier — Page " counter(page) " of " counter(pages);
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+  @top-right {
+    content: "Rev 1.0 — Nov 2026";
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 7pt;
+    color: #666;
+  }
+}
+body {
+  font-family: 'DejaVu Sans', sans-serif;
+  font-size: 10pt;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+h1 { font-size: 26pt; color: #0a0a0b; border-bottom: 3px solid #0a0a0b; padding-bottom: 10px; margin-top: 20px; }
+h2 { font-size: 17pt; color: #0a0a0b; border-bottom: 2px solid #0a0a0b; padding-bottom: 6px; margin-top: 24px; }
+h3 { font-size: 12pt; color: #2a2a2e; margin-top: 16px; margin-bottom: 6px; }
+h4 { font-size: 11pt; color: #0a0a0b; margin-top: 14px; margin-bottom: 4px; }
+p { margin: 6px 0; text-align: justify; }
+code { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; background: #0a0a0b; color: #e8e8ea; padding: 1px 4px; border-radius: 2px; }
+pre { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; background: #0a0a0b; color: #e8e8ea; padding: 10px; border-radius: 4px; margin: 8px 0; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 8.5pt; }
+th { background: #0a0a0b; color: #fff; padding: 5px 7px; text-align: left; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.03em; }
+td { border: 1px solid #2a2a2e; padding: 4px 7px; font-size: 8.5pt; }
+tr:nth-child(even) td { background: #f4f4f5; }
+.cover { text-align: center; padding-top: 80px; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.cover h1 { font-size: 36pt; letter-spacing: 3px; color: #0a0a0b; margin-bottom: 20px; border: none; }
+.cover .subtitle { font-size: 15pt; color: #7c3aed; margin-top: 10px; }
+.cover .description { font-size: 10.5pt; color: #666; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.cover .author { font-size: 11pt; color: #888; margin-top: 50px; }
+.cover .author div { margin: 3px 0; }
+.section-break { page-break-after: always; }
+.card { border: 1px solid #2a2a2e; padding: 12px; margin: 10px 0; border-radius: 4px; background: #fafafa; }
+.card h3 { margin-top: 0; font-size: 14px; color: #0a0a0b; }
+.card p { margin: 6px 0; font-size: 11px; color: #333; }
+.card ul { margin: 6px 0; padding-left: 20px; font-size: 11px; color: #333; }
+.card li { margin: 3px 0; }
+ul { margin: 6px 0; padding-left: 20px; }
+li { margin: 3px 0; }
+.note { font-size: 8pt; color: #666; font-style: italic; }
+.page-break { page-break-before: always; }
+.fidelity-badge { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
+.level-4 { color: #10b981; background: #f0fdf4; border: 1px solid #10b981; }
+.level-3 { color: #f59e0b; background: #fffbeb; border: 1px solid #f59e0b; }
+.equation { background: #f4f4f5; border-left: 3px solid #7c3aed; padding: 8px 12px; margin: 10px 0; font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; }
+
+.shot {
+  display: block;
+  width: 100%;
+  margin: 10px 0 4px 0;
+  border: 1px solid #2a2a2e;
+  border-radius: 4px;
+}
+.shot-caption {
+  font-size: 7.5pt;
+  line-height: 1.4;
+  color: #666;
+  font-style: italic;
+  margin: 0 0 12px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <h1>THORRIJA</h1>
+  <div class="subtitle">Engineering Showcase — Technical Dossier (English)</div>
+  <div class="description">
+    Complete technical documentation of deterministic computational models
+    reconstructed from source code. Architecture, algorithms, implementations,
+    testing, limitations, and theoretical foundations for each project.
+  </div>
+  <div class="author">
+    <div>Author: Thorrija (Rubén N.)</div>
+    <div>Spain</div>
+    <div>November 2026</div>
+    <div>GitHub: github.com/ThorrijaDEV</div>
+  </div>
+</div>
+
+<div class="section-break"></div>
+
+<!-- ================= 1. EXECUTIVE OVERVIEW ================= -->
+<h2>1. Executive Overview</h2>
+<p>This technical dossier documents the Engineering Showcase: a collection of
+independent computational models reconstructed from source code. Each model is
+a faithful algorithmic port — same input produces same output, all calculations
+are real, no outputs are hardcoded, and all models are verified by automated
+tests.</p>
+<p>Total: <strong>182 tests passing</strong> (80 showcase model tests + 102
+The Box model/experimental/validation/YAML tests). Build: Vite, 160.69 kB JS,
+zero runtime dependencies.</p>
+
+<h3>Projects covered</h3>
+<table>
+<tr><th>Project</th><th>Domain</th><th>Tests</th><th>Fidelity</th><th>Status</th></tr>
+<tr><td>Wi-Fi Time Machine</td><td>Wireless environment</td><td>18</td><td>Level 4</td><td>Completed</td></tr>
+<tr><td>BLE Radar</td><td>Bluetooth LE</td><td>16</td><td>Level 4</td><td>Completed</td></tr>
+<tr><td>Process Ecosystem Monitor</td><td>Linux processes</td><td>22</td><td>Level 4</td><td>Completed</td></tr>
+<tr><td>Terminal Generative Engine</td><td>Generative art</td><td>24</td><td>Level 4</td><td>Completed</td></tr>
+<tr><td>The Box</td><td>Relational substrate</td><td>102</td><td>Level 3</td><td>Completed</td></tr>
+<tr><td>Sigscan</td><td>Forensics (Go)</td><td>12</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Dnsdrill</td><td>DNS client (Python)</td><td>13</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Silicon</td><td>8-bit CPU (Rust)</td><td>14</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Forja</td><td>Compiler (Rust)</td><td>11</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Polea</td><td>Pub/sub broker (C++17)</td><td>17</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Cask</td><td>Content-addressable store (C)</td><td>15</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Neondrift</td><td>Arcade game (HTML/JS)</td><td>9</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Clickwheel + Console</td><td>Music app (Android/Web)</td><td>12</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Syspeek</td><td>System TUI (Python/curses)</td><td>16</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Hackdeck</td><td>Pentest deck (HTML)</td><td>10</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Canarytrap</td><td>Canary tokens (Python)</td><td>10</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Loglens</td><td>Pocket SIEM (Python)</td><td>36</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Reconkit</td><td>Recon toolkit (Python)</td><td>22</td><td>N/A</td><td>Completed</td></tr>
+<tr><td>Port Authority</td><td>Port historian (Python)</td><td>11</td><td>N/A</td><td>Completed</td></tr>
+<img class="shot" src="overview.png" alt="Overview of the four interactive laboratories in the Engineering Showcase web application, each card stating its domain, technology and test count.">
+<p class="shot-caption">Figure — The showcase overview: every interactive laboratory with its domain, technology and test count.</p>
+<img class="shot" src="fidelity.png" alt="Fidelity and methodology page of the Engineering Showcase web application: the fidelity level of each model on the left and the honest limitations of every laboratory on the right.">
+<p class="shot-caption">Figure — Fidelity classification per model and the honest limitations of every laboratory.</p>
+
+</table>
+
+<div class="section-break"></div>
+
+<!-- ================= 2. ENGINEERING PHILOSOPHY ================= -->
+<h2>2. Engineering Philosophy</h2>
+<h3>2.1 Independent reconstruction</h3>
+<p>Every model is reconstructed independently from the original source code.
+The original project is never executed inside a demonstration. This means:
+all outputs are computed from the user's input, nothing is hardcoded, and
+the implementation can be verified independently.</p>
+<h3>2.2 Determinism</h3>
+<p>All models are deterministic: same input always produces the same output.
+Every random decision is derived from <code>unit_hash(seed, step, purpose,
+structural_digest(candidate))</code> — a pure function of (state, seed, step).
+There is no hidden random state.</p>
+<h3>2.3 Intermediate stages</h3>
+<p>Each demonstration shows processing stages, not just final results. Visitors
+can see how input is transformed step by step into output.</p>
+<h3>2.4 Honest limitations</h3>
+<p>Nothing is claimed that is not implemented and tested. Limitations are
+documented explicitly for each project.</p>
+
+<div class="section-break"></div>
+
+<!-- ================= 3. PROJECT DETAILS ================= -->
+<h2>3. Project Details</h2>
+
+<h3>3.1 Wi-Fi Time Machine</h3>
+<p><strong>Problem:</strong> Wi-Fi scanning tools produce voluminous output that is
+difficult to interpret over time. There is no easy way to see how the wireless
+environment changes — which networks appeared, on which channels, with what
+signal strength, and when.</p>
+<p><strong>Architecture:</strong> Input parser (iw scan dump / nmcli text) → BSS
+block parser → BSSID deduplication (strongest signal) → frequency-to-channel
+mapping (802.11 2.4/5/6 GHz) → security inference from AKM suites → timeline
+heatmap construction → export (JSON/CSV with SHA-256 BSSID sanitization).</p>
+<p><strong>Data structures:</strong> <code>WifiModelInput</code> (iwDump/nmcli text,
+observedAt, backend, sanitize, width, labelWidth), <code>WifiModelOutput</code>
+(stages, final timeline, channelStats, sparkline, exportJson, exportCsv,
+networks, observations).</p>
+<p><strong>Algorithms:</strong> BSS block parsing from <code>iw scan dump</code>,
+escaped nmcli tokenizer (handling <code>\\:</code> and <code>\\\\</code>),
+frequency-to-channel mapping (2.4 GHz: floor((freq−2407)/5), 5 GHz:
+floor((freq−5000)/5), 6 GHz: floor((freq−5925)/5)), security inference from
+Authentication suites (AKM), RSSI deduplication by BSSID keeping strongest
+signal, time-bucket heatmap construction.</p>
+<p><strong>Testing:</strong> 18 tests covering parsing, deduplication, channel
+mapping, security inference, heatmap generation, export sanitization.</p>
+<p><strong>Limitations:</strong> No live iw/nmcli binaries, no adapter scanning,
+no SQLite persistence (in-memory only), no terminal size adaptation. Input
+must be synthetic text.</p>
+  <img class="shot" src="wtm.png" alt="Wi-Fi Time Machine laboratory in the Engineering Showcase web application: a synthetic iw scan dump on the left, the time by channel heatmap on the right, and the intermediate processing stages below.">
+  <p class="shot-caption">Figure — Wi-Fi Time Machine laboratory: synthetic <code>iw</code> dump input, time × channel heatmap, and the intermediate stages of the calculation.</p>
+
+<h3>3.2 BLE Radar</h3>
+<p><strong>Problem:</strong> Bluetooth LE devices broadcast observations, but there
+is no simple way to visualize them as a radar: which devices are nearby, how
+strong their signal is, and how they appear and disappear over time.</p>
+<p><strong>Architecture:</strong> Observation model (address, name, RSSI, timestamp,
+backend, manufacturer data) → EMA smoothing (alpha=0.4) → strength bands
+(strong ≥ −40, near ≥ −55, mid ≥ −70, far ≥ −85, weak) → hash→angle mapping
+(SHA-256(MAC) → 0–360°, visual convention) → radar frame geometry (crosshair,
+concentric rings, sweep line, device markers, history trails) → session replay.</p>
+<p><strong>Data structures:</strong> <code>BleModelInput</code> (observations, now,
+sweepAngle, sanitize, width, height, demoSeconds, demoSeed),
+<code>BleModelOutput</code> (devices, frame, lifecycleSummary, replay,
+exportJson, exportCsv).</p>
+<p><strong>Algorithms:</strong> EMA smoothing: rssi_ema = 0.6 × prev + 0.4 × raw.
+Strength bands: strong ≥ −40 dBm, near ≥ −55 dBm, mid ≥ −70 dBm, far ≥ −85
+dBm, weak < −85 dBm. Stable angle: SHA-256(MAC address)[0:2] / 65536 × 360°.
+State machine: appeared → active → fading → disappeared (15s/30s windows).</p>
+<p><strong>Testing:</strong> 16 tests covering device lifecycle, EMA smoothing,
+strength bands, hash→angle mapping, radar frame geometry, replay, export.</p>
+<p><strong>Limitations:</strong> No BLE hardware (no bleak/BlueZ), no live scanning.
+RSSI is signal strength, never physical distance. Angle is a visual
+convention, not orientation.</p>
+  <img class="shot" src="ble.png" alt="BLE Radar laboratory in the Engineering Showcase web application: deterministic demo configuration on the left, the radar geometry on the right, and the device lifecycle state table below.">
+  <p class="shot-caption">Figure — BLE Radar laboratory: deterministic demo configuration, radar geometry, and the device lifecycle state.</p>
+
+<h3>3.3 Process Ecosystem Monitor</h3>
+<p><strong>Problem:</strong> Linux /proc contains rich process information, but
+reading and understanding it — CPU%, parent/child relationships, PID reuse —
+requires manual parsing and correlation.</p>
+<p><strong>Architecture:</strong> /proc-style snapshot parser → ProcessEcosystemModel
+(lifecycle, CPU jiffie accounting, process tree, orphan re-homing, PID reuse
+detection) → renderer/UI.</p>
+<p><strong>Data structures:</strong> <code>ProcSnapshot</code> (pid, ppid, comm,
+state, utime, stime, numThreads, starttime, vsize, rss, user),
+<code>ProcModelInput</code> (snapshots, system, intervalSec, clkTick, ncores,
+wallTime), <code>ProcModelOutput</code> (diff, processes, treeRoots,
+kernelThreads, systemCpu, systemRam, aliveCount).</p>
+<p><strong>Algorithms:</strong> /proc/[pid]/stat parsing (including nested-paren
+comm handling), /proc/[pid]/statm parsing, /proc/stat parsing, /proc/meminfo
+parsing, /proc/loadavg parsing. CPU% = Δ(utime+stime) / (interval × CLK_TCK ×
+ncores) × 100. System CPU% = busy_delta / total_delta × 100 (idle = idle +
+iowait). Process identity = (pid, starttime); PID reuse detected when starttime
+changes. Process tree from ppid; orphans rehomed to init (pid 1). Lifecycle:
+new → active/idle → dying → dead.</p>
+<p><strong>Testing:</strong> 22 tests covering /proc/[pid]/stat parsing (including
+nested-paren comm), CPU% calculation, process tree building, orphan re-homing,
+PID reuse detection, lifecycle transitions.</p>
+<p><strong>Limitations:</strong> No real /proc access; synthetic snapshots only. No
+curses terminal UI. CPU% is a model estimate from jiffie deltas, not the host
+system's actual CPU.</p>
+  <img class="shot" src="pem.png" alt="Process Ecosystem Monitor laboratory in the Engineering Showcase web application: a synthetic /proc snapshot on the left and the process state table on the right.">
+  <p class="shot-caption">Figure — Process Ecosystem Monitor laboratory: synthetic <code>/proc</code> snapshot input and the derived process state table.</p>
+
+<div class="section-break"></div>
+
+<h3>3.4 Terminal Generative Engine</h3>
+<p><strong>Problem:</strong> Generative art usually depends on hidden random state,
+making it impossible to reproduce a specific frame or share a specific output.</p>
+<p><strong>Architecture:</strong> Stateless splitmix64-style RNG → seed-derived
+parameters → render modes (flowfield/plasma/attractor) → framebuffer → half-block
+terminal encoding → output.</p>
+<p><strong>Data structures:</strong> <code>GenModelInput</code> (seed, mode, width,
+height, frame, palette), <code>GenModelOutput</code> (stages, final pixels,
+width, height, frame, seed, mode, palette, cellCount, fingerprint).</p>
+<p><strong>Algorithms:</strong> Stateless splitmix64-style RNG: every pixel is a pure
+function of (seed, mode, frame, salt, index). Flowfield: analytic sine field
+with particle streamlines. Plasma: closed-form per-pixel color fields. Attractor:
+Clifford/Dejong strange map with coefficient probing. SHA-256 world fingerprint
+over mode + frame + parameters + pixels.</p>
+<p><strong>Testing:</strong> 24 tests covering RNG determinism, mode rendering, frame
+seeking, fingerprint consistency, palette interpolation.</p>
+<p><strong>Limitations:</strong> No terminal/ANSI output; no file export (pixel arrays
+exported as data only); original project has 5 failing tests not reproduced
+here.</p>
+  <img class="shot" src="gen.png" alt="Terminal Generative Engine laboratory in the Engineering Showcase web application: seed, mode, canvas and frame controls on the left, the deterministic render on the right.">
+  <p class="shot-caption">Figure — Terminal Generative Engine laboratory: seed, mode, canvas and frame controls, with the deterministic render.</p>
+
+<h3>3.5 The Box</h3>
+<p><strong>Problem:</strong> Most graphs store identity and lineage as explicit
+fields. The Box asks: what if identity and lineage are not stored at all, but
+emerge purely from rewriting rules?</p>
+<p><strong>Architecture:</strong> Arc-incidence multi-digraph kernel where nodes and
+arcs share one id space, arcs can point to arcs (second-order structure). Six
+rewriting rules (GATHER, BOND, TAG_PROP, QUIET, DESCEND, FUSE) operate on the
+substrate. Four engine policies (canonical, uniform, weighted, roundrobin).
+Possibility space: finite, exactly enumerable, seed-independent. Identity and
+lineage derived from arc tags, not stored fields.</p>
+<p><strong>Data structures:</strong> <code>Node</code> {id, tag, payload: Float64Array,
+born}, <code>Arc</code> {id, src, dst, tag, weight, clock}. Shared id space
+between nodes and arcs. Second-order arcs: an arc can point to another arc.</p>
+<p><strong>Algorithms:</strong> Six rewriting rules:</p>
+<ul>
+<li><strong>GATHER:</strong> Two nodes that point to the same hub connect directly.</li>
+<li><strong>BOND:</strong> Anchor and an out-neighbor sharing two in-neighbors link up.</li>
+<li><strong>TAG_PROP:</strong> Anchor copies the tag of an out-neighbor.</li>
+<li><strong>QUIET:</strong> Node with no inflow for 30 steps is marked QUIET (tag 5).</li>
+<li><strong>DESCEND:</strong> QUIET node with space spawns a child with its tag and
+payload + small jitter.</li>
+<li><strong>FUSE:</strong> Two siblings (same parent via DESCEND) with same tag and
+close payload identify; twin is retired, EQUIV arc remains as fusion witness.</li>
+</ul>
+<p><strong>Metrics:</strong> degree tables (in/out degree, Gini coefficient),
+components (union-find), beta0/beta1 (Euler-exact on incidence graph:
+beta1 = ‖arcs‖ − ‖objects‖ + beta0), component size profile, modularity
+(deterministic Louvain, single level), 14 named observables.</p>
+<p><strong>Testing:</strong> 102 tests (42 kernel + 25 experimental + 12 validation
++ 23 YAML loader) covering kernel invariants, rule application, engine policies,
+possibility space, identity/lineage derivation, structural metrics, null models,
+p-values, provenance, experiment provenance.</p>
+<p><strong>Limitations:</strong> Fidelity Level 3. Pure-TS BLAKE2b (not byte-compatible
+with Python hashlib.blake2b); Float64Array replaces NumPy arrays; foundry rules
+hard-coded (no YAML loader in model layer — available in the-box-yaml.ts); no
+null-model surrogate battery in model layer (experimental layer has it); no
+Koopman analysis; no classifier gates (G1–G4); no SQLite; no CLI or store API.</p>
+  <img class="shot" src="the-box.png" alt="The Box laboratory in the Engineering Showcase web application: the arc-incidence substrate configuration with node and arc counts, dimension, seed, steps, engine policy and tag spread.">
+  <p class="shot-caption">Figure — The Box laboratory: arc-incidence substrate configuration — node and arc counts, dimension, seed, steps, engine policy and tag spread.</p>
+
+<div class="section-break"></div>
+
+<!-- ================= 4. TESTING ================= -->
+<h2>4. Testing and Validation</h2>
+<p>All models are verified by automated tests. Total: <strong>182 tests, all
+passing</strong>.</p>
+<table>
+<tr><th>Suite</th><th>Tests</th><th>Location</th></tr>
+<tr><td>Wi-Fi Time Machine</td><td>18</td><td>tests/wifi-time-machine.test.ts</td></tr>
+<tr><td>BLE Radar</td><td>16</td><td>tests/ble-radar.test.ts</td></tr>
+<tr><td>Process Ecosystem Monitor</td><td>22</td><td>tests/process-ecosystem.test.ts</td></tr>
+<tr><td>Terminal Generative Engine</td><td>24</td><td>tests/generative-engine.test.ts</td></tr>
+<tr><td>The Box (kernel/engine/rules)</td><td>42</td><td>models/the-box.test.ts</td></tr>
+<tr><td>The Box (experimental layer)</td><td>25</td><td>models/the-box-experiment.test.ts</td></tr>
+<tr><td>The Box (validation fixtures)</td><td>12</td><td>models/the-box-validation.test.ts</td></tr>
+<tr><td>The Box (YAML loader)</td><td>23</td><td>models/the-box-yaml.test.ts</td></tr>
+</table>
+<p><strong>Coverage target:</strong> 80%+ on lines and functions of each model.</p>
+<p><strong>Cross-language validation:</strong> 12 tests compare TypeScript structural
+properties against Python reference values built from controlled fixtures
+(hand-built substrates, not State.random()). Verified equivalences: node/arc
+counts, degree distributions, beta0/beta1, components, modularity, lineage
+depth, identity metrics, all 14 named observables, rule applicability, null
+model structural properties.</p>
+<p><strong>Not byte-compatible:</strong> Graph hashes, canonical keys, unit_hash
+outputs, and experiment fingerprints differ between Python and TypeScript due
+to the BLAKE2b implementation difference. Same seed produces identical output
+within each implementation, but Python and TS produce different hashes for the
+same input. Structural properties are equivalent; hash values are not.</p>
+
+<div class="section-break"></div>
+
+<!-- ================= 4. LIMITATIONS ================= -->
+<h2>5. Limitations</h2>
+<ul>
+<li><strong>The Box fidelity Level 3:</strong> Pure-TS BLAKE2b replaces
+Python hashlib.blake2b (not byte-compatible). Float64Array replaces NumPy
+arrays. Foundry rules hard-coded (no YAML loader in model layer). No Koopman
+analysis, no classifier gates (G1–G4), no null-model surrogate battery in model
+layer.</li>
+<li><strong>WTM and BLE Radar:</strong> No live hardware access; synthetic inputs
+only.</li>
+<li><strong>Terminal Generative Engine:</strong> No terminal/ANSI output; no file
+export (pixel arrays exported as data only).</li>
+<li><strong>Process Ecosystem Monitor:</strong> No live /proc access; synthetic
+snapshots only.</li>
+<li><strong>All models:</strong> No SQLite persistence (in-memory only); no API keys;
+no external services; all data is synthetic or computed from user input.</li>
+</ul>
+
+<div class="section-break"></div>
+
+<!-- ================= 6. FUTURE ENGINEERING ================= -->
+<h2>6. Future Engineering Directions</h2>
+<ul>
+<li>Null models, p-values, and classifier gates (G1–G4) for The Box experimental layer.</li>
+<li>Koopman analysis for The Box.</li>
+<li>SQLite persistence layer for The Box.</li>
+<li>CLI and store API for The Box.</li>
+<li>File export (GIF/PNG/ANSI) for Terminal Generative Engine.</li>
+<li>Live Wi-Fi/BLE hardware access.</li>
+<li>End-to-end browser tests.</li>
+<li>Accessibility audit (WCAG 2.2 AA).</li>
+</ul>
+
+<div class="section-break"></div>
+
+<!-- ================= 6. CONTACT ================= -->
+<h2>7. Contact and Repositories</h2>
+<ul>
+  <li><strong>Author:</strong> Thorrija (Rubén N.)</li>
+  <li><strong>Location:</strong> Spain</li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/ThorrijaDEV">github.com/ThorrijaDEV</a></li>
+  <li><strong>Showcase:</strong> <a href="https://github.com/ThorrijaDEV/showcase">github.com/ThorrijaDEV/showcase</a></li>
+  <li><strong>Models:</strong> <a href="https://github.com/ThorrijaDEV/models">github.com/ThorrijaDEV/models</a></li>
+  <li><strong>Portfolio:</strong> <a href="https://github.com/ThorrijaDEV/Portafolio">github.com/ThorrijaDEV/Portafolio</a></li>
+</ul>
+
+<p class="note">All models are deterministic: same input → same output. No
+hardware, no API keys, no external services required for demonstrations. All
+data shown is synthetic or computed from user input — nothing is fabricated.</p>
+
+</body>
+</html>
+PYEOF

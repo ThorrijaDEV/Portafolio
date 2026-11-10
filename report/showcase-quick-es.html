@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>THORRIJA — Engineering Showcase — Edición rápida (español)</title>
+<style>
+@page {
+  size: A4;
+  margin: 2cm 2cm 2cm 2cm;
+  @bottom-center {
+    content: "THORRIJA — Engineering Showcase — Edición rápida — Página " counter(page) " de " counter(pages);
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+  @top-right {
+    content: "Rev 1.0 — Nov 2026";
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 7pt;
+    color: #666;
+  }
+}
+body {
+  font-family: 'DejaVu Sans', sans-serif;
+  font-size: 10pt;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+h1 { font-size: 26pt; color: #0a0a0b; border-bottom: 3px solid #0a0a0b; padding-bottom: 10px; margin-top: 20px; }
+h2 { font-size: 17pt; color: #0a0a0b; border-bottom: 2px solid #0a0a0b; padding-bottom: 6px; margin-top: 24px; }
+h3 { font-size: 12pt; color: #2a2a2e; margin-top: 16px; margin-bottom: 6px; }
+p { margin: 6px 0; text-align: justify; }
+code { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; background: #0a0a0b; color: #e8e8ea; padding: 1px 4px; border-radius: 2px; }
+pre { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; background: #0a0a0b; color: #e8e8ea; padding: 10px; border-radius: 4px; margin: 8px 0; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 8.5pt; }
+th { background: #0a0a0b; color: #fff; padding: 5px 7px; text-align: left; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.03em; }
+td { border: 1px solid #2a2a2e; padding: 4px 7px; font-size: 8.5pt; }
+tr:nth-child(even) td { background: #f4f4f5; }
+.cover { text-align: center; padding-top: 80px; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.cover h1 { font-size: 36pt; letter-spacing: 3px; color: #0a0a0b; margin-bottom: 20px; border: none; }
+.cover .subtitle { font-size: 15pt; color: #7c3aed; margin-top: 10px; }
+.cover .description { font-size: 10.5pt; color: #666; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.cover .author { font-size: 11pt; color: #888; margin-top: 50px; }
+.cover .author div { margin: 3px 0; }
+.section-break { page-break-after: always; }
+.card { border: 1px solid #2a2a2e; padding: 12px; margin: 10px 0; border-radius: 4px; background: #fafafa; }
+.card h3 { margin-top: 0; font-size: 14px; color: #0a0a0b; }
+.card p { margin: 6px 0; font-size: 11px; color: #333; }
+.card ul { margin: 6px 0; padding-left: 20px; font-size: 11px; color: #333; }
+.card li { margin: 3px 0; }
+ul { margin: 6px 0; padding-left: 20px; }
+li { margin: 3px 0; }
+.note { font-size: 8pt; color: #666; font-style: italic; }
+.page-break { page-break-before: always; }
+.fidelity-badge { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
+.level-4 { color: #10b981; background: #f0fdf4; border: 1px solid #10b981; }
+.level-3 { color: #f59e0b; background: #fffbeb; border: 1px solid #f59e0b; }
+
+.shot {
+  display: block;
+  width: 100%;
+  margin: 10px 0 4px 0;
+  border: 1px solid #2a2a2e;
+  border-radius: 4px;
+}
+.shot-caption {
+  font-size: 7.5pt;
+  line-height: 1.4;
+  color: #666;
+  font-style: italic;
+  margin: 0 0 12px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <h1>THORRIJA</h1>
+  <div class="subtitle">Engineering Showcase — Edición rápida (español)</div>
+  <div class="description">
+    Modelos computacionales deterministas reconstruidos desde código fuente. Una presentación lista para mostrar qué construí, cómo funciona y por qué importa.
+  </div>
+  <div class="author">
+    <div>Autor: Thorrija (Rubén N.)</div>
+    <div>España</div>
+    <div>Noviembre de 2026</div>
+    <div>GitHub: github.com/ThorrijaDEV</div>
+  </div>
+</div>
+
+<div class="section-break"></div>
+
+<!-- ================= 1. INTRODUCCIÓN ================= -->
+<h2>1. Introducción</h2>
+<p>Esta muestra presenta mi trabajo de ingeniería: una colección de modelos computacionales deterministas y herramientas de ingeniería que diseñé, reconstruí y probé. Cada proyecto es una reconstrucción independiente — construida a partir del código fuente, no ejecutando el original — así que todo lo que ves se calcula desde tu entrada, no está hardcodeado.</p>
+<p>Todo funciona de forma determinista: misma entrada siempre produce la misma salida. No hay resultados generados por IA, no hay demostraciones simuladas, no hay lógica oculta. Lo que ves es lo que el código realmente hace.</p>
+<p>Esta edición rápida da los datos esenciales de cada proyecto: qué aborda, por qué existe, qué construí, cómo funciona y cuáles son sus limitaciones. Para detalle técnico más profundo, consulta la edición técnica.</p>
+
+<div class="section-break"></div>
+
+<!-- ================= 2. PROYECTOS ================= -->
+<h2>2. Los Proyectos</h2>
+<p>A continuación se presentan todos los proyectos de la muestra, organizados por categoría. Cada uno incluye una descripción breve, el problema que aborda y su estado actual.</p>
+
+<h3>2.1 Wi-Fi Time Machine</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> No hay forma sencilla de ver cómo cambia el entorno inalámbrico con el tiempo — qué redes aparecieron, en qué canales, con qué fuerza y cuándo.</div>
+  <div><strong>Lo que construí:</strong> Un modelo determinista que parsea volcados de escaneo Wi-Fi (formato iw o nmcli), deduplica por BSSID manteniendo la señal más fuerte, mapea frecuencias a canales 802.11 (2.4/5/6 GHz), infiere seguridad de los suites de autenticación y renderiza un mapa de calor tiempo × canales con sparkline por red.</div>
+  <div><strong>Por qué es interesante:</strong> Convierte vuelcos de escaneo Wi-Fi en una visualización de línea de tiempo que se puede explorar, mostrando cómo cambia el entorno inalámbrico sin necesidad de hardware en vivo.</div>
+  <div><strong>Estado:</strong> Completado — 18 pruebas, Nivel 4 de fidelidad.</div>
+</div>
+  <img class="shot" src="wtm.png" alt="Laboratorio Wi-Fi Time Machine en la aplicación web del Engineering Showcase: volcado iw sintético a la izquierda, mapa de calor tiempo por canal a la derecha y etapas intermedias debajo.">
+  <p class="shot-caption">Laboratorio Wi-Fi Time Machine — entrada sintética <code>iw</code>, mapa de calor tiempo × canal y etapas intermedias del cálculo.</p>
+
+<h3>2.2 BLE Radar</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los dispositivos BLE cercanos emiten señales, pero no hay forma sencilla de verlos como un radar: qué dispositivos hay cerca, cuál es su fuerza de señal y cómo aparecen y desaparecen con el tiempo.</div>
+  <div><strong>Lo que construí:</strong> Un radar determinista que simula observaciones BLE con una máquina de estado de ciclo de vida (aparecido → activo → desvaneciendo → desaparecido), suavizado EMA de RSSI (alpha=0.4), bandas de fuerza (no distancia) y un ángulo derivado del hash SHA-256 de la dirección MAC (convención visual, no orientación real). Incluye reproducción de sesiones y exportación.</div>
+  <div><strong>Por qué es interesante:</strong> Hace visibles los dispositivos BLE cercanos como un radar determinista, con honestidad de señal: el RSSI es fuerza de señal, nunca metros físicos.</div>
+  <div><strong>Estado:</strong> Completado — 16 pruebas, Nivel 4 de fidelidad.</div>
+</div>
+  <img class="shot" src="ble.png" alt="Laboratorio BLE Radar en la aplicación web del Engineering Showcase: configuración determinista a la izquierda, geometría del radar a la derecha y tabla de estados de dispositivos debajo.">
+  <p class="shot-caption">Laboratorio BLE Radar — configuración determinista, geometría del radar y estado del ciclo de vida de los dispositivos.</p>
+
+<h3>2.3 Process Ecosystem Monitor</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Linux /proc contiene información rica sobre procesos, pero leerla y entenderla — CPU%, árbol de procesos, reuso de PID — requiere parseo y correlación manuales.</div>
+  <div><strong>Lo que construí:</strong> Un modelo determinista que parsea instantáneas sintéticas de estilo /proc, calcula CPU% a partir de deltas de jiffies (normalizado por núcleo), construye el árbol de procesos desde ppid, detecta reuso de PID mediante la identidad (pid, starttime), rehúerfa a huérfanos y sigue estados de ciclo de vida (nuevo → activo/inactivo → muriendo → muerto).</div>
+  <div><strong>Por qué es interesante:</strong> Convierte instantáneas de /proc en un ecosistema de procesos comprensible con nacimientos, muertes y contabilidad de CPU — todo desde instantáneas sintéticas, sin acceder al sistema anfitrión.</div>
+  <div><strong>Estado:</strong> Completado — 22 pruebas, Nivel 4 de fidelidad.</div>
+</div>
+  <img class="shot" src="pem.png" alt="Laboratorio Process Ecosystem Monitor en la aplicación web del Engineering Showcase: instantánea sintética de /proc a la izquierda y tabla de estado de procesos a la derecha.">
+  <p class="shot-caption">Laboratorio Process Ecosystem Monitor — entrada sintética de <code>/proc</code> y tabla de estado de procesos derivada.</p>
+
+<h3>2.4 Terminal Generative Engine</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> El arte generativo suele depender de estado aleatorio oculto, haciendo imposible reproducir un frame específico o compartir un resultado exacto.</div>
+  <div><strong>Lo que construí:</strong> Un RNG splitmix64-style sin estado donde cada píxel es una función pura de (semilla, modo, frame, sal, índice). Tres modos: flowfield (campo de senos analítico), plasma (campos de color cerrados), attractor (mapa extraño de Clifford/Dejong). Búsqueda de frame O(1) — salta a cualquier frame sin calcular los anteriores. Huella dactilar SHA-256 del mundo para compartir.</div>
+  <div><strong>Por qué es interesante:</strong> Misma semilla + mismo frame = mismo resultado, siempre. No hay estado oculto ni aleatoriedad en tiempo de render. Comparte una semilla y cualquiera obtendrá la misma obra de arte.</div>
+  <div><strong>Estado:</strong> Completado — 24 pruebas, Nivel 4 de fidelidad.</div>
+</div>
+  <img class="shot" src="gen.png" alt="Laboratorio Terminal Generative Engine en la aplicación web del Engineering Showcase: controles de semilla, modo, lienzo y frame a la izquierda, render determinista a la derecha.">
+  <p class="shot-caption">Laboratorio Terminal Generative Engine — controles de semilla, modo, lienzo y frame, con el render determinista.</p>
+
+<h3>2.5 The Box</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> La mayoría de los grafos almacenan identidad y linaje como campos explícitos. The Box pregunta: ¿qué pasaría si la identidad y el linaje no se almacenan en absoluto, sino que emergen de reglas de reescritura?</div>
+  <div><strong>Lo que construí:</strong> Un sustrato relacional arc-incidencia multi-digraph donde nodos y arcos comparten un mismo espacio de ids, los arcos pueden tener otros arcos como extremos, y seis reglas de reescritura (GATHER, BOND, TAG_PROP, QUIET, DESCEND, FUSE) modifican la estructura. La identidad (quién se fusionó con quién) y el linaje (quién engendró a quién) son propiedades derivadas de las etiquetas de los arcos, no campos almacenados en el núcleo. Cuatro políticas del motor, métricas estructurales (grados, Gini, componentes, beta0/beta1, modularidad), 14 observables nombrados, modelos nulos y p-valores empíricos.</div>
+  <div><strong>Por qué es interesante:</strong> Demuestra cómo propiedades complejas como identidad y linaje pueden emerger de reglas locales simples sin ser almacenadas explícitamente — una forma diferente de pensar la computación sobre grafos.</div>
+  <div><strong>Estado:</strong> Completado — 102 pruebas (42+25+12+23), Nivel 3 de fidelidad (BLAKE2b puro TS, no byte-compatible con Python hashlib.blake2b).</div>
+</div>
+  <img class="shot" src="the-box.png" alt="Laboratorio The Box en la aplicación web del Engineering Showcase: configuración del sustrato arc-incidencia con número de nodos y arcos, dimensión, semilla, pasos, política del motor y spread de etiquetas.">
+  <p class="shot-caption">Laboratorio The Box — configuración del sustrato arc-incidencia: nodos y arcos, dimensión, semilla, pasos, política del motor y spread de etiquetas.</p>
+
+<h3>2.6 Sigscan</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> El análisis forense necesita detectar y extraer formatos de archivo embebidos (JPEG, PNG, ELF) dentro de volcado binarios sin conocer sus límites.</div>
+  <div><strong>Lo que construí:</strong> Un escáner forense de firmas mágicas en Go: detecta JPEG/PNG/ELF embebidos y puede tallarlos a disco. Solo stdlib, binario estático.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.7 Dnsdrill</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Entender DNS requiere ver la estructura real de los paquetes, no solo las respuestas resueltas.</div>
+  <div><strong>Lo que construí:</strong> Un cliente DNS que construye paquetes RFC 1035 a mano con struct: punteros de compresión, fallback TCP en truncados, 7 tipos de registro. Una vista transparente del protocolo DNS en el cable.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.8 Silicon</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Entender la arquitectura de CPU requiere construir una desde cero.</div>
+  <div><strong>Lo que construí:</strong> Una CPU de 8 bits construida desde cero en Rust: ISA propia, ensamblador, desensamblador, VM determinista, pantalla virtual de 32×32. Cero dependencias.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.9 Forja</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los compiladores suelen ser cajas negras; entenderlos requiere construir uno desde cero.</div>
+  <div><strong>Lo que construí:</strong> Un compilador en Rust que traduce un lenguaje tipo u8 a ensamblador SILICON: variables en memoria, ALU sobre el acumulador, saltos por banderas, print_num con división por restas y pruebas end-to-end sobre la VM real.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.10 Polea</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los sistemas de mensajería pub/sub suelen ser complejos con muchas dependencias; entenderlos requiere construir uno desde cero.</div>
+  <div><strong>Lo que construí:</strong> Un broker de mensajería pub/sub en C++17 sin dependencias: protocolo binario propio con cabecera de 13 bytes, delimitación por longitud y CRC-32, reenvío ordenado con un solo hilo sobre poll(2), colas acotadas con backpressure y cliente CLI para publicar y escuchar temas.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.11 Cask</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los almacenes direccionables por contenido necesitan deduplicación y recuperación ante corrupción.</div>
+  <div><strong>Lo que construí:</strong> Un almacén solo-append direccionable por contenido escrito en C puro: formato binario propio con CRC32 + SHA-256, deduplicación por contenido y recuperación automática ante corrupción o truncamiento.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.12 Neondrift</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los juegos arcade suelen requerir muchos activos; construir uno desde cero demuestra programación de juegos.</div>
+  <div><strong>Lo que construí:</strong> Un endless runner arcade en un solo HTML: física y colisiones propias, chiptune generado con WebAudio (cero assets), partículas y récord local.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.13 Clickwheel + Console</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los reproductores de música y las consolas web suelen ser experiencias separadas; combinarlas muestra diseño de interfaz multiplataforma.</div>
+  <div><strong>Lo que construí:</strong> Dos reproductores, una idea: música que se opera. App Android estilo iPod con click-wheel háptico (Compose) que reproduce música local y busca en YouTube Music; y una consola web hi-fi vintage sin dependencias.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.14 Syspeek</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Los paneles de monitorización de sistemas suelen requerir muchas dependencias; una TUI en curses muestra lo que se puede hacer con dependencias mínimas.</div>
+  <div><strong>Lo que construí:</strong> Panel TUI en curses puro — cero dependencias. CPU por núcleo, memoria, tasas de red y procesos principales leídos directamente de /proc con parsers hechos a mano.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.15 Hackdeck</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Las utilidades de pentest suelen estar dispersas en muchas herramientas; un mazo offline en un solo HTML las hace accesibles desde cualquier navegador.</div>
+  <div><strong>Lo que construí:</strong> Mazo offline de utilidades pentest en HTML único (~15 KB): base64, hex, JWT, SHA-1/256/512, XOR, César, UUID. Cero red, cero telemetría — todo corre en tu navegador.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.16 Canarytrap</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Detectar accesos no autorizados requiere tokens canary que alerten cuando alguien los toca.</div>
+  <div><strong>Lo que construí:</strong> Canary tokens autoalojados: claves AWS falsas, .env señuelo y web bugs que disparan un webhook cuando alguien los toca. Solo stdlib, tus registros nunca salen de tu VPS.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.17 Loglens</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Detectar amenazas en registros requiere un SIEM ligero que funcione sin infraestructura pesada.</div>
+  <div><strong>Lo que construí:</strong> SIEM de bolsillo: detecta fuerza bruta SSH, enumeración de usuarios, escaneos web y picos de error en tus registros — cero dependencias, 100% offline, informe HTML.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.18 Reconkit</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> El reconocimiento de activos autorizados requiere un multitool que combine subdominios, escaneo de puertos y dir busting.</div>
+  <div><strong>Lo que construí:</strong> Multitool de reconocimiento para activos autorizados: subdominios vía CT logs, escáner de puertos asíncrono y dir busting — todo en sesiones SQLite con informe HTML unificado.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.19 Port Authority</h3>
+<div class="card">
+  <div><strong>Problema que aborda:</strong> Saber qué proceso escuchó en qué puerto y cuándo requiere seguimiento histórico.</div>
+  <div><strong>Lo que construí:</strong> Un historiador de puertos de red para Linux: registra quién escuchó dónde y cuándo en una bitácora SQLite local.</div>
+  <div><strong>Estado:</strong> Completado.</div>
+</div>
+
+<h3>2.20 Otros trabajos y experimentos</h3>
+<div class="card">
+  <div><strong>Red Neuronal Modular:</strong> Arquitectura de red neuronal construida desde cero en Python con un colaborador, extensible mediante plugins.</div>
+  <div><strong>Sistema de IA personal:</strong> En desarrollo: automatización de tareas digitales y flujos de trabajo propios.</div>
+  <div><strong>Automatizaciones personales:</strong> Scripts y herramientas pequeñas que resuelven fricciones diarias en mi escritorio Linux.</div>
+  <div><strong>Edición de vídeo:</strong> Producciones con más de 20.000 visualizaciones entre CapCut y DaVinci Resolve.</div>
+  <div><strong>Experiencia OSINT:</strong> Exploración de herramientas de ciberseguridad en entornos controlados.</div>
+</div>
+
+<div class="section-break"></div>
+
+<!-- ================= 3. CÓMO DEMOSTRAR ================= -->
+<h2>3. Cómo demostrar</h2>
+<p>Cada sección de proyectos anteriores explica qué mostrar. Para los laboratorios interactivos (WTM, BLE, PEM, GenArt, The Box), abre la aplicación web, selecciona el laboratorio desde la barra lateral, ajusta los parámetros y haz clic en ejecutar. Todos los modelos son deterministas — misma semilla y entrada siempre producen el mismo resultado.</p>
+<p>Para los proyectos estáticos (Sigscan, Dnsdrill, Silicon, etc.), consulta sus respectivos repositorios de GitHub para el código fuente y uso.</p>
+
+<div class="section-break"></div>
+
+<!-- ================= 4. CONTACTO ================= -->
+<h2>4. Contacto y repositorios</h2>
+<ul>
+  <li><strong>Autor:</strong> Thorrija (Rubén N.)</li>
+  <li><strong>Ubicación:</strong> España</li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/ThorrijaDEV">github.com/ThorrijaDEV</a></li>
+  <li><strong>Showcase:</strong> <a href="https://github.com/ThorrijaDEV/showcase">github.com/ThorrijaDEV/showcase</a></li>
+  <li><strong>Modelos:</strong> <a href="https://github.com/ThorrijaDEV/models">github.com/ThorrijaDEV/models</a></li>
+  <li><strong>Portafolio:</strong> <a href="https://github.com/ThorrijaDEV/Portafolio">github.com/ThorrijaDEV/Portafolio</a></li>
+</ul>
+
+<p class="note">Todos los modelos son deterministas: misma entrada → misma salida. No requieren hardware, ni claves de API, ni servicios externos para las demostraciones. Todos los datos mostrados son sintéticos o calculados desde tu entrada — nada está fabricado.</p>
+
+</body>
+</html>
+PYEOF

@@ -86,10 +86,11 @@
                 <a href="#contact" data-i18n="nav_contacto">Contacto</a>
             </nav>
             <div class="header-actions">
-        <div class="lang-switch" aria-label="Idioma / Language">
-          <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+                <div class="lang-switch" role="group" aria-labelledby="lang-switch-label">
+                    <span class="sr-only" id="lang-switch-label" data-i18n="lang_switch_label">Idioma</span>
+                    <button class="lang-btn active" type="button" data-lang="es" data-i18n="lang_label_es" aria-pressed="true">ES</button>
+                    <button class="lang-btn" type="button" data-lang="en" data-i18n="lang_label_en" aria-pressed="false">EN</button>
+                </div>
                 <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar entre tema claro y oscuro">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -144,7 +145,7 @@
 
                 <div class="hero-rule" aria-hidden="true"></div>
 
-                <p class="hero-statement" data-i18n="hero_statement">Construyo software que observa,<br>registra y explica sistemas vivos.</p>
+                <p class="hero-statement" data-i18n="hero_statement" data-i18n-html>Construyo software que observa,<br>registra y explica sistemas vivos.</p>
                 <p class="hero-lede" data-i18n="hero_lede">Desarrollador de software centrado en Linux, inteligencia artificial y ciberseguridad.Diseño herramientas de línea de comandos y TUI que miden lo que normalmente pasa desapercibido — el entorno inalámbrico, los dispositivos Bluetooth, la vida de los procesos — y lo dejan registrado para poder estudiarlo con calma.</p>
 
                 <div class="hero-links">
@@ -171,7 +172,7 @@
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="nav_perfil">Perfil</span></p>
-                    <h2 class="section-title reveal delay-1" id="about-title" data-i18n="about_title">Aprendo desmontando<br>sistemas y reconstruyéndolos.</h2>
+                    <h2 class="section-title reveal delay-1" id="about-title" data-i18n="about_title" data-i18n-html>Aprendo desmontando<br>sistemas y reconstruyéndolos.</h2>
                 </header>
 
                 <div class="about-grid">
@@ -186,7 +187,7 @@
                         <div><dt data-i18n="about_system">Sistema principal</dt><dd data-i18n="about_system_val">Arch Linux</dd></div>
                         <div><dt data-i18n="about_focus">Enfoque</dt><dd data-i18n="about_focus_val">CLI &amp; TUI · redes · automatización</dd></div>
                         <div><dt data-i18n="about_languages">Idiomas</dt><dd data-i18n="about_languages_val">Python · Rust · C · C++ · JavaScript · Bash</dd></div>
-                        <div><dt data-i18n="about_opensource">Código abierto</dt><dd data-i18n="about_opensource_val"><a href="https://github.com/ThorrijaDEV" target="_blank" rel="noopener">github.com/ThorrijaDEV</a></dd></div>
+                        <div><dt data-i18n="about_opensource">Código abierto</dt><dd><a href="https://github.com/ThorrijaDEV" target="_blank" rel="noopener" data-i18n="about_opensource_val">github.com/ThorrijaDEV</a></dd></div>
                         <div><dt data-i18n="about_identity">Identidad</dt><dd data-i18n="about_identity_val">Thorrija_Dev · Thorrija_Live · Thorrija_Games</dd></div>
                         <div><dt data-i18n="about_form">Forma</dt><dd data-i18n="about_form_val">Autodidacta · maker · por curiosidad</dd></div>
                     </dl>
@@ -198,7 +199,7 @@
         <section class="section manifesto" aria-labelledby="manifesto-title">
             <div class="container">
                 <blockquote class="reveal" id="manifesto-title">
-                    <p data-i18n="manifesto_quote">Aprendo rompiendo sistemas, analizándolos y reconstruyéndolos.<br><em>La curiosidad es el motor de todo lo que creo.</em></p>
+                    <p data-i18n="manifesto_quote" data-i18n-html>Aprendo rompiendo sistemas, analizándolos y reconstruyéndolos.<br><em>La curiosidad es el motor de todo lo que creo.</em></p>
                 </blockquote>
                 <ol class="method-steps reveal delay-1" role="list">
                     <li><span>01</span><span data-i18n="manifesto_exp">Experimentación</span></li>
@@ -214,13 +215,60 @@
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="projects_showcase_title">Demostraciones interactivas</span></p>
-                    <h2 class="section-title reveal delay-1" id="showcase-title" data-i18n="projects_showcase_title">Demostraciones interactivas</h2>
+                    <h2 class="section-title reveal delay-1" id="showcase-title" data-i18n="projects_showcase_heading">Engineering Showcase</h2>
                     <p class="section-lede reveal delay-2" data-i18n="projects_showcase_desc">Modelos computacionales deterministas reconstruidos desde el código fuente de mis proyectos. Cambia parámetros, observa los cálculos y explora la arquitectura.</p>
                 </header>
-                <div class="controls mt-8" style="display:flex; gap:12px; flex-wrap:wrap;">
-                    <a href="../showcase/" class="btn primary" target="_blank" rel="noopener" data-i18n="projects_showcase_link">Abrir showcase</a>
-                    <a href="../report/Thorrija-Engineering-Showcase.es.pdf" class="btn secondary" target="_blank" rel="noopener" data-i18n="projects_pdf_link_es">Descargar PDF (ES)</a>
-                    <a href="../report/Thorrija-Engineering-Showcase.en.pdf" class="btn secondary" target="_blank" rel="noopener" data-i18n="projects_pdf_link_en">Descargar PDF (EN)</a>
+                <div class="showcase-panel reveal delay-3 mt-8">
+                    <div class="showcase-panel-head">
+                        <h3 class="showcase-panel-title" data-i18n="showcase_editions_title">Ediciones del showcase</h3>
+                        <a class="btn primary" href="../showcase/" target="_blank" rel="noopener" data-i18n="projects_showcase_link">Abrir showcase</a>
+                    </div>
+
+                    <ul class="edition-list" role="list">
+                        <li class="edition-item">
+                            <a class="edition-link" href="./report/Thorrija-Engineering-Showcase-Quick-EN.pdf" target="_blank" rel="noopener">
+                                <span class="edition-kind" data-i18n="edition_kind_quick">Edición rápida</span>
+                                <span class="edition-lang" data-i18n="lang_label_en">EN</span>
+                                <span class="edition-desc" data-i18n="edition_desc_quick">Lo esencial de cada proyecto: qué aborda, por qué existe, cómo funciona y dónde se queda corto.</span>
+                                <span class="edition-pages" data-i18n="edition_pages_quick_en">11 páginas · PDF</span>
+                            </a>
+                        </li>
+                        <li class="edition-item">
+                            <a class="edition-link" href="./report/Thorrija-Engineering-Showcase-Quick-ES.pdf" target="_blank" rel="noopener">
+                                <span class="edition-kind" data-i18n="edition_kind_quick">Edición rápida</span>
+                                <span class="edition-lang" data-i18n="lang_label_es">ES</span>
+                                <span class="edition-desc" data-i18n="edition_desc_quick">Lo esencial de cada proyecto: qué aborda, por qué existe, cómo funciona y dónde se queda corto.</span>
+                                <span class="edition-pages" data-i18n="edition_pages_quick_es">12 páginas · PDF</span>
+                            </a>
+                        </li>
+                        <li class="edition-item">
+                            <a class="edition-link" href="./report/Thorrija-Engineering-Showcase-Technical-EN.pdf" target="_blank" rel="noopener">
+                                <span class="edition-kind" data-i18n="edition_kind_technical">Dossier técnico</span>
+                                <span class="edition-lang" data-i18n="lang_label_en">EN</span>
+                                <span class="edition-desc" data-i18n="edition_desc_technical">Filosofía de ingeniería, garantías de determinismo, arquitectura de cada proyecto y límites documentados.</span>
+                                <span class="edition-pages" data-i18n="edition_pages_technical_en">13 páginas · PDF</span>
+                            </a>
+                        </li>
+                        <li class="edition-item">
+                            <a class="edition-link" href="./report/Thorrija-Engineering-Showcase-Technical-ES.pdf" target="_blank" rel="noopener">
+                                <span class="edition-kind" data-i18n="edition_kind_technical">Dossier técnico</span>
+                                <span class="edition-lang" data-i18n="lang_label_es">ES</span>
+                                <span class="edition-desc" data-i18n="edition_desc_technical">Filosofía de ingeniería, garantías de determinismo, arquitectura de cada proyecto y límites documentados.</span>
+                                <span class="edition-pages" data-i18n="edition_pages_technical_es">14 páginas · PDF</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="showcase-legacy">
+                        <h4 class="showcase-legacy-title" data-i18n="showcase_legacy_title">Ediciones anteriores</h4>
+                        <p class="showcase-legacy-desc" data-i18n="showcase_legacy_desc">El showcase completo: inventario técnico, fundamentos matemáticos y experimentos individuales.</p>
+                        <div class="controls mt-4">
+                            <a class="btn secondary" href="./report/Thorrija-Engineering-Showcase.en.pdf" target="_blank" rel="noopener" data-i18n="showcase_legacy_pdf_en">Showcase (EN) · 10 páginas</a>
+                            <a class="btn secondary" href="./report/Thorrija-Engineering-Showcase.es.pdf" target="_blank" rel="noopener" data-i18n="showcase_legacy_pdf_es">Showcase (ES) · 10 páginas</a>
+                            <a class="btn secondary" href="./report/Thorrija-Engineering-Showcase-Technical-Dossier.pdf" target="_blank" rel="noopener" data-i18n="showcase_legacy_dossier_en">Dossier técnico (EN) · 23 páginas</a>
+                            <a class="btn secondary" href="./report/Thorrija-Engineering-Showcase-Technico.pdf" target="_blank" rel="noopener" data-i18n="showcase_legacy_dossier_es">Dossier técnico (ES) · 12 páginas</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -230,7 +278,7 @@
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="projects_eyebrow">Trabajo seleccionado</span></p>
-                    <h2 class="section-title reveal delay-1" id="projects-title" data-i18n="projects_title">Software real,<br>publicado y documentado.</h2>
+                    <h2 class="section-title reveal delay-1" id="projects-title" data-i18n="projects_title" data-i18n-html>Software real,<br>publicado y documentado.</h2>
                     <p class="section-lede reveal delay-2" data-i18n="projects_lede">Una selección de las herramientas que mantengo públicamente en GitHub. Cada una nace de un problema propio y llega hasta el final: release, documentación y pruebas.</p>
                 </header>
 
@@ -543,7 +591,7 @@
                 </div>
 
                 <div class="side-works reveal">
-                    <h3 class="side-title"><span class="eyebrow-rule" aria-hidden="true"></span>Experimentos y otros trabajos</h3>
+                    <h3 class="side-title"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="projects_side_title">Experimentos y otros trabajos</span></h3>
                     <ul class="work-list" role="list">
                         <li>
                             <div><h4 data-i18n="side_work_1_title">Red Neuronal Modular</h4><p data-i18n="side_work_1_desc">Arquitectura de red neuronal construida desde cero en Python junto a un colaborador, extensible mediante plugins.</p></div>
@@ -575,7 +623,7 @@
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="skills_eyebrow">Capacidades</span></p>
-                    <h2 class="section-title reveal delay-1" id="skills-title" data-i18n="skills_title">Lo que uso<br>cada semana.</h2>
+                    <h2 class="section-title reveal delay-1" id="skills-title" data-i18n="skills_title" data-i18n-html>Lo que uso<br>cada semana.</h2>
                 </header>
 
                 <div class="skill-columns">
@@ -620,8 +668,8 @@
             <div class="container">
                 <header class="section-head">
                     <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="certs_eyebrow">Certificaciones</span></p>
-                    <h2 class="section-title reveal delay-1" id="certificates-title" data-i18n="certs_title">Dos bases<br>que sostienen el resto.</h2>
-                    <p class="section-lede reveal delay-2" data-i18n="skills_lede">La matemática da el razonamiento y Python da el lenguaje. Todo lo demás que hay en esta página se apoya en esas dos columnas.</p>
+                    <h2 class="section-title reveal delay-1" id="certificates-title" data-i18n="certs_title" data-i18n-html>Dos bases<br>que sostienen el resto.</h2>
+                    <p class="section-lede reveal delay-2" data-i18n="certs_lede">La matemática da el razonamiento y Python da el lenguaje. Todo lo demás que hay en esta página se apoya en esas dos columnas.</p>
                 </header>
 
                 <div class="cred-grid">
@@ -686,7 +734,7 @@
         <section class="section section-alt contact" id="contact" aria-labelledby="contact-title">
             <div class="container contact-inner">
                 <p class="eyebrow reveal"><span class="eyebrow-rule" aria-hidden="true"></span><span data-i18n="contact_eyebrow">Contacto</span></p>
-                <h2 class="sr-only" id="contact-title">Contacto</h2>
+                <h2 class="sr-only" id="contact-title" data-i18n="contact_title">Contacto</h2>
                 <p class="contact-hint reveal delay-1" data-i18n="contact_hint">Una sola dirección, sin formularios ni intermediarios.</p>
                 <a class="contact-mail reveal delay-2" href="mailto:thorrija.contact@gmail.com">thorrija.contact@gmail.com</a>
                 <button class="copy-btn reveal delay-3" type="button" id="copyEmail" data-copy="thorrija.contact@gmail.com">
@@ -714,7 +762,7 @@
             </nav>
             <div class="footer-meta">
                 <a class="footer-mail" href="mailto:thorrija.contact@gmail.com">thorrija.contact@gmail.com</a>
-                <p data-i18n="footer_meta">© <span id="year">2026</span> Thorrija · Rubén N.</p>
+                <p data-i18n="footer_meta" data-i18n-html>© <span id="year">2026</span> Thorrija · Rubén N.</p>
             </div>
         </div>
     </footer>

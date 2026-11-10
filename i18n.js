@@ -21,6 +21,13 @@ const I18N = {
     hero_work: "View the work",
     hero_profile: "Profile",
 
+    hero_eyebrow_1: "Systems",
+    hero_eyebrow_2: "Artificial intelligence",
+    hero_eyebrow_3: "Cybersecurity",
+
+    // Header language switch
+    lang_switch_label: "Language",
+
     // Hero foot
     hero_foot_stack1: "Arch Linux · CLI & TUI · Networks",
     hero_foot_stack2: "Python · Rust · C · C++ · Go",
@@ -56,8 +63,24 @@ const I18N = {
     projects_title: "Real software,<br>published and documented.",
     projects_lede: "A selection of tools I maintain publicly on GitHub. Each one starts from my own problem and goes all the way: release, documentation, and tests.",
     projects_showcase_title: "Interactive demos",
-    projects_showcase_desc: "Deterministic computational models reconstructed from source code. Change parameters, observe the calculations, explore the architecture.",
+    projects_showcase_heading: "Engineering Showcase",
+    projects_showcase_desc: "Deterministic computational models reconstructed from source code. Open the interactive application, or download an edition of the showcase as a document.",
     projects_showcase_link: "Open showcase",
+    showcase_editions_title: "Showcase editions",
+    edition_kind_quick: "Quick edition",
+    edition_kind_technical: "Technical dossier",
+    edition_desc_quick: "The essentials of each project: what it addresses, why it exists, how it works, and where it stops.",
+    edition_desc_technical: "Engineering philosophy, determinism guarantees, per-project architecture and documented limitations.",
+    edition_pages_quick_en: "11 pages · PDF",
+    edition_pages_quick_es: "12 pages · PDF",
+    edition_pages_technical_en: "13 pages · PDF",
+    edition_pages_technical_es: "14 pages · PDF",
+    showcase_legacy_title: "Previous editions",
+    showcase_legacy_desc: "The full showcase: technical inventory, mathematical foundations and individual experiments.",
+    showcase_legacy_pdf_en: "Showcase (EN) · 10 pages",
+    showcase_legacy_pdf_es: "Showcase (ES) · 10 pages",
+    showcase_legacy_dossier_en: "Technical dossier (EN) · 23 pages",
+    showcase_legacy_dossier_es: "Technical dossier (ES) · 12 pages",
     projects_side_title: "Experiments and other work",
 
     // Project cards (EN descriptions live in data-i18n spans)
@@ -113,7 +136,6 @@ const I18N = {
     // Skills
     skills_eyebrow: "Capabilities",
     skills_title: "What I use<br>every week.",
-    skills_lede: "Math provides the reasoning and Python provides the language. Everything else on this page builds on those two pillars.",
     skills_programming: "Programming",
     skills_systems: "Systems and networks",
     skills_creative: "Digital creativity",
@@ -176,6 +198,13 @@ const I18N = {
     hero_work: "Ver el trabajo",
     hero_profile: "Perfil",
 
+    hero_eyebrow_1: "Sistemas",
+    hero_eyebrow_2: "Inteligencia artificial",
+    hero_eyebrow_3: "Ciberseguridad",
+
+    // Selector de idioma de la cabecera
+    lang_switch_label: "Idioma",
+
     // Hero foot
     hero_foot_stack1: "Arch Linux · CLI & TUI · Redes",
     hero_foot_stack2: "Python · Rust · C · C++ · Go",
@@ -211,8 +240,24 @@ const I18N = {
     projects_title: "Software real,<br>publicado y documentado.",
     projects_lede: "Una selección de las herramientas que mantengo públicamente en GitHub. Cada una nace de un problema propio y llega hasta el final: release, documentación y pruebas.",
     projects_showcase_title: "Demostraciones interactivas",
-    projects_showcase_desc: "Modelos computacionales deterministas reconstruidos desde el código fuente de mis proyectos. Cambia parámetros, observa los cálculos y explora la arquitectura.",
+    projects_showcase_heading: "Engineering Showcase",
+    projects_showcase_desc: "Modelos computacionales deterministas reconstruidos desde el código fuente de mis proyectos. Abre la aplicación interactiva o descarga una edición del showcase en PDF.",
     projects_showcase_link: "Abrir showcase",
+    showcase_editions_title: "Ediciones del showcase",
+    edition_kind_quick: "Edición rápida",
+    edition_kind_technical: "Dossier técnico",
+    edition_desc_quick: "Lo esencial de cada proyecto: qué aborda, por qué existe, cómo funciona y dónde se queda corto.",
+    edition_desc_technical: "Filosofía de ingeniería, garantías de determinismo, arquitectura de cada proyecto y límites documentados.",
+    edition_pages_quick_en: "11 páginas · PDF",
+    edition_pages_quick_es: "12 páginas · PDF",
+    edition_pages_technical_en: "13 páginas · PDF",
+    edition_pages_technical_es: "14 páginas · PDF",
+    showcase_legacy_title: "Ediciones anteriores",
+    showcase_legacy_desc: "El showcase completo: inventario técnico, fundamentos matemáticos y experimentos individuales.",
+    showcase_legacy_pdf_en: "Showcase (EN) · 10 páginas",
+    showcase_legacy_pdf_es: "Showcase (ES) · 10 páginas",
+    showcase_legacy_dossier_en: "Dossier técnico (EN) · 23 páginas",
+    showcase_legacy_dossier_es: "Dossier técnico (ES) · 12 páginas",
     projects_side_title: "Experimentos y otros trabajos",
 
     proj_sigscan: "Sigscan",
@@ -267,7 +312,6 @@ const I18N = {
     // Skills
     skills_eyebrow: "Capacidades",
     skills_title: "Lo que uso<br>cada semana.",
-    skills_lede: "La matemática da el razonamiento y Python da el lenguaje. Todo lo demás que hay en esta página se apoya en esas dos columnas.",
     skills_programming: "Programación",
     skills_systems: "Sistemas y redes",
     skills_creative: "Creatividad digital",
@@ -367,8 +411,17 @@ function applyTranslations() {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     const translation = dict[key];
-    if (translation !== undefined) {
+    if (translation === undefined) return;
+    // data-i18n must sit on a leaf element: assigning innerHTML to an
+    // element that owns children destroys them. Only values that
+    // deliberately carry markup opt in with data-i18n-html.
+    if (el.hasAttribute('data-i18n-html')) {
       el.innerHTML = translation;
+    } else {
+      if (el.children.length > 0 && typeof console !== 'undefined' && console.warn) {
+        console.warn('data-i18n on a non-leaf element; children would be lost:', key);
+      }
+      el.textContent = translation;
     }
   });
   // Alt-text images

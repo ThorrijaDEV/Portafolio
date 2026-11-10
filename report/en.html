@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>THORRIJA — Software Engineering Showcase</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2cm 2cm 2cm 2cm;
+    @bottom-center {
+      content: "THORRIJA — Engineering Showcase — Page " counter(page) " of " counter(pages);
+      font-family: 'DejaVu Sans', sans-serif;
+      font-size: 8pt;
+      color: #666;
+    }
+  }
+  body { font-family: 'DejaVu Sans', serif; font-size: 10pt; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 24pt; color: #0a0a0b; border-bottom: 2px solid #0a0a0b; padding-bottom: 8px; }
+  h2 { font-size: 16pt; color: #0a0a0b; border-bottom: 1px solid #2a2a2e; padding-bottom: 4px; margin-top: 24px; }
+  h3 { font-size: 12pt; color: #2a2a2e; margin-top: 18px; }
+  .cover { text-align: center; padding-top: 60px; }
+  .cover h1 { font-size: 32pt; letter-spacing: 2px; }
+  .cover .subtitle { font-size: 14pt; color: #666; margin-top: 24px; }
+  .cover .author { font-size: 12pt; color: #888; margin-top: 40px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 9pt; }
+  th { background: #0a0a0b; color: #fff; padding: 6px 8px; text-align: left; }
+  td { border: 1px solid #2a2a2e; padding: 5px 8px; }
+  .fidelity { font-family: 'DejaVu Sans Mono', monospace; font-size: 9pt; }
+  .level-4 { color: #10b981; font-weight: bold; }
+  .level-3 { color: #f59e0b; font-weight: bold; }
+  .level-2 { color: #3b82f6; font-weight: bold; }
+  .level-1 { color: #ef4444; font-weight: bold; }
+  pre { background: #0a0a0b; color: #e8e8ea; padding: 10px; border-radius: 4px; font-size: 8pt; overflow-x: auto; }
+  .equation { background: #f4f4f5; border-left: 3px solid #0a0a0b; padding: 8px 12px; margin: 10px 0; font-family: 'DejaVu Sans Mono', monospace; font-size: 9pt; }
+  .card { border: 1px solid #2a2a2e; padding: 12px; margin: 10px 0; border-radius: 4px; background: #fafafa; }
+  ul { margin: 8px 0; padding-left: 20px; }
+  .toc { font-family: 'DejaVu Sans Mono', monospace; font-size: 9pt; }
+  .toc a { color: #0a0a0b; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .warning { background: #fffbeb; border: 1px solid #f59e0b; padding: 8px; margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <h1>THORRIJA</h1>
+  <div class="subtitle">Software Engineering Showcase</div>
+  <div style="margin-top: 16px; font-size: 11pt; color: #666;">
+    Deterministic computational models built from source code
+  </div>
+  <div class="author" style="margin-top: 60px;">
+    <div>Author: Thorrija (Rubén N.)</div>
+    <div>Spain</div>
+    <div>November 2026</div>
+    <div>Technical presentation — universal engineering showcase</div>
+  </div>
+</div>
+
+<div style="page-break-after: always;"></div>
+
+<!-- ================= TOC ================= -->
+<h2>Contents</h2>
+<div class="toc">
+  <p><a href="#cap1">1. Introduction</a></p>
+  <p><a href="#cap2">2. Technical Inventory</a></p>
+  <p><a href="#cap3">3. Architecture and Implementation</a></p>
+  <p><a href="#cap4">4. Mathematical and Computational Foundations</a></p>
+  <p><a href="#cap5">5. Deterministic Reconstruction Methodology</a></p>
+  <p><a href="#cap6">6. Individual Computational Experiments</a></p>
+  <p><a href="#cap7">7. Validation and Testing</a></p>
+  <p><a href="#cap8">8. Comparative Technical Analysis</a></p>
+  <p><a href="#cap9">9. Limitations and Future Development</a></p>
+  <p><a href="#cap10">10. Conclusions</a></p>
+  <p><a href="#ap1">Appendix A — Glossary</a></p>
+  <p><a href="#ap2">Appendix B — Equations</a></p>
+  <p><a href="#ap3">Appendix C — Source Code References</a></p>
+  <p><a href="#ap4">Appendix D — Complete Project Index</a></p>
+</div>
+
+<!-- ================= CHAPTER 1 ================= -->
+<h2 id="cap1">1. Introduction</h2>
+<p><b>Objectives:</b> Demonstrate genuine software engineering ability through construction, auditing, and reconstruction of real software projects as independent deterministic computational models. This presentation is intended for technical evaluation.</p>
+<p><b>Engineering approach:</b> Every demonstration is based on actual source code from the original projects. Algorithms, data structures, rules, and processing pipelines are identified from the source code and reconstructed as independent models that accept configurable inputs and produce reproducible outputs.</p>
+<p><b>Selection methodology:</b> Projects were evaluated on technical depth, algorithmic complexity, implementation quality, originality, completeness, reproducibility, and educational value. Four projects were selected for interactive demonstrations; all discovered projects are documented in this PDF catalog.</p>
+<p><b>Scope limitations:</b> Demonstrations do not execute original projects, do not require specific hardware, external services, or API keys. Some functionality depends on unavailable hardware or services and is documented as such.</p>
+
+<!-- ================= CHAPTER 2 ================= -->
+<h2 id="cap2">2. Technical Inventory</h2>
+<p>All projects discovered across GitHub repositories and local development directories, organized by technical category.</p>
+
+<h3>2.1 Projects selected for interactive demonstration (4 selected)</h3>
+<table>
+<tr><th>Project</th><th>Purpose</th><th>Technologies</th><th>Status</th><th>Fidelity</th></tr>
+<tr><td>Wi-Fi Time Machine</td><td>Wireless environment history with replay and temporal visualization</td><td>Python 3, stdlib, SQLite, iw/nmcli/iwd</td><td>Completed (v1.0.0)</td><td class="fidelity level-4">Level 4</td></tr>
+<tr><td>BLE Radar</td><td>Terminal radar for nearby BLE devices with RSSI, lifecycle, and replay</td><td>Python 3, bleak, SQLite, curses</td><td>Completed (v1.0.0)</td><td class="fidelity level-4">Level 4</td></tr>
+<tr><td>Process Ecosystem Monitor</td><td>Linux process tree as a living ecosystem (birth/death/orphans)</td><td>Python 3, /proc, stdlib, curses</td><td>Completed (v0.1.0)</td><td class="fidelity level-4">Level 4</td></tr>
+<tr><td>Terminal Generative Engine</td><td>Deterministic procedural generative art for terminal</td><td>Python 3, stdlib, splitmix64 RNG</td><td>Completed</td><td class="fidelity level-4">Level 4</td></tr>
+</table>
+
+<h3>2.2 Complete catalog of discovered projects</h3>
+<p>The PDF report documents all discovered projects. Below is a summary index; extensive details are in Appendix D.</p>
+
+<table>
+<tr><th>Category</th><th>Project</th><th>Language</th><th>Status</th></tr>
+<tr><td>Wireless Networks</td><td>Wi-Fi Time Machine</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Wireless Networks</td><td>BLE Radar</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>Process Ecosystem Monitor</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Creative / Generative</td><td>Terminal Generative Engine</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>silicon</td><td>Rust</td><td>Completed</td></tr>
+<tr><td>Storage</td><td>cask</td><td>C</td><td>Completed</td></tr>
+<tr><td>AI / Desktop</td><td>aster-ai</td><td>—</td><td>Completed</td></tr>
+<tr><td>Forensics</td><td>sigscan</td><td>Go</td><td>Completed</td></tr>
+<tr><td>Networks</td><td>dnsdrill</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>syspeek</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Security</td><td>loglens</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Security</td><td>canarytrap</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Games</td><td>neondrift</td><td>HTML/JS</td><td>Completed</td></tr>
+<tr><td>Security</td><td>hackdeck</td><td>HTML/JS</td><td>Completed</td></tr>
+<tr><td>Mobile</td><td>clickwheel</td><td>Kotlin</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>update-manager</td><td>—</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>sysmon-dashboard</td><td>—</td><td>Completed</td></tr>
+<tr><td>Systems</td><td>snapshot-manager</td><td>—</td><td>Completed</td></tr>
+<tr><td>Networks</td><td>port-authority</td><td>Python</td><td>Completed</td></tr>
+<tr><td>Creative</td><td>portfolio-demos</td><td>HTML/JS</td><td>Completed</td></tr>
+<tr><td>Cognitive</td><td>nexus-titan</td><td>—</td><td>Completed</td></tr>
+<tr><td>Cognitive</td><td>nox-cognitive-runtime</td><td>—</td><td>Completed</td></tr>
+<tr><td>Cognitive</td><td>echo-cognitive-organism</td><td>—</td><td>Completed</td></tr>
+</table>
+
+<!-- ================= CHAPTER 3 ================= -->
+<h2 id="cap3">3. Architecture and Implementation</h2>
+<p>For each demonstrated project, the architecture discovered in the source code is detailed: component responsibilities, data structures, algorithms, processing pipelines, internal interfaces, dependencies, design decisions, and technical trade-offs.</p>
+
+<h3>3.1 Wi-Fi Time Machine</h3>
+<p><b>Architecture:</b> Scanning layer (3 backends: iwd, nmcli, iw-cache) → pure parsers → deduplication by BSSID → SQLite storage → aggregation queries → terminal rendering.</p>
+<p><b>Data structures:</b> <code>ScanResult</code> (BSSID, SSID, channel, frequency, signal, security), stored in tables <code>networks</code>, <code>observations</code>, <code>sessions</code>.</p>
+<p><b>Algorithms:</b> Parsing BSS blocks from <code>iw scan dump</code>, nmcli escaped tokenizer (handling <code>\\:</code> and <code>\\\\</code>), frequency-to-channel 802.11 mapping (2.4/5/6 GHz), security inference from AKM suites, networks × time-bucket heatmap.</p>
+<p><b>Processing pipeline:</b> Scan → parse → dedup (strongest signal) → register in SQLite → aggregation by network/channel → render heatmap, sparkline, bars.</p>
+
+<h3>3.2 BLE Radar</h3>
+<p><b>Architecture:</b> Scanners (bleak/demo/replay) → Observation → RadarEngine (state machine + EMA) → snapshot → radar frame geometry (cell grid) → curses UI.</p>
+<p><b>Data structures:</b> <code>Observation</code> (address, name, RSSI, timestamp), <code>DeviceState</code> (RSSI EMA, state, trails), <code>DeviceSnap</code> (angle, band, state, jitter).</p>
+<p><b>Algorithms:</b> State machine appeared→active→fading→disappeared (15s/30s windows), EMA RSSI (α=0.4), RSSI strength bands (strong≥-40 … weak), stable angle from SHA-256(address), aspect-corrected polar geometry for radar, replay cursor with seek/speed.</p>
+
+<h3>3.3 Process Ecosystem Monitor</h3>
+<p><b>Architecture:</b> /proc collector → pure parsers → EcosystemState (lifecycle, CPU, memory, tree) → renderer/UI.</p>
+<p><b>Data structures:</b> <code>ProcessSnapshot</code> (pid, ppid, comm, state, utime, stime, starttime, RSS), <code>ProcessState</code> (lifecycle, CPU%, history rings), <code>SystemSample</code> (system CPU, RAM, load).</p>
+<p><b>Algorithms:</b> CPU% from jiffie delta normalized per-core, identity (pid, starttime) with PID reuse detection, tree from ppid with orphan re-homing via graveyard (max 512), lifecycle new→active/idle→dying→dead.</p>
+
+<h3>3.4 Terminal Generative Engine</h3>
+<p><b>Architecture:</b> Stateless splitmix64 RNG → seed-derived parameters → render modes (flowfield/plasma/attractor) → framebuffer → half-block encoding → output.</p>
+<p><b>Algorithms:</b> Analytic sine field (flowfield), closed-form color fields (plasma), Clifford/Dejong strange map with coefficient probing (attractor), density accumulation with log+gamma tone curve.</p>
+
+<!-- ================= CHAPTER 4 ================= -->
+<h2 id="cap4">4. Mathematical and Computational Foundations</h2>
+<p>Only concepts actually relevant to the implementations are included.</p>
+
+<div class="equation">channel = ⌊(freq − 5000) / 5⌋ &nbsp; [5 GHz]</div>
+<div class="equation">channel = ⌊(freq − 5925) / 5⌋ &nbsp; [6 GHz]</div>
+<div class="equation">channel = ⌊(freq − 2407) / 5⌋ &nbsp; [2.4 GHz, except 2484 → 14]</div>
+<div class="equation">rssi_ema = 0.6 × prev + 0.4 × raw &nbsp; (α = 0.4)</div>
+<div class="equation">angle = SHA-256(addr)[0:2] / 65536 × 360° &nbsp; (visual convention, not bearing)</div>
+<div class="equation">band = strong(≥−40) / near(≥−55) / mid(≥−70) / far(≥−85) / weak</div>
+<div class="equation">x = cx + radius × 2 × cos(angle); &nbsp; y = cy − radius × sin(angle)</div>
+<div class="equation">cpu_proc = Δ(utime+stime) / (interval × CLK_TCK × ncores) × 100</div>
+<div class="equation">cpu_sys = busy_delta / total_delta × 100 &nbsp; (idle = idle + iowait)</div>
+<div class="equation">identity = (pid, starttime); &nbsp; starttime change ⇒ PID reuse</div>
+<div class="equation">ram_pct = (mem_total − mem_available) / mem_total × 100</div>
+<div class="equation">x' = sin(a·y) + c·cos(a·x), &nbsp; y' = sin(b·x) + d·cos(b·y) &nbsp; (Clifford attractor)</div>
+
+<h3>Computational Complexity</h3>
+<ul>
+<li>WTM: O(n) parsing over scan text; O(n) aggregation; O(n × buckets) timeline. Linear in observations.</li>
+<li>BLE: O(n) ingestion over observations; O(d) snapshot over devices; O(cells + devices × trails) frame.</li>
+<li>PEM: O(p) update per tick over processes; O(p) tree build; graveyard-bounded ancestor walk.</li>
+<li>GenArt: O(pixels) per frame flowfield/plasma, O(1) seek; O(iterates × frames) attractor density.</li>
+</ul>
+
+<!-- ================= CHAPTER 5 ================= -->
+<h2 id="cap5">5. Deterministic Reconstruction Methodology</h2>
+<p><b>Why independent models:</b> Demonstrations do not execute original projects. This avoids dependencies on hardware (Bluetooth/Wi-Fi adapters), external services, specific runtimes, and API keys. Each model is an independent implementation that reproduces the documented computational behavior of the original.</p>
+<p><b>Source code analysis methodology:</b> 1) Complete inspection of source code structure; 2) Identification of algorithms, data structures, and rules; 3) Extraction of pure functions (no I/O); 4) Reimplementation in TypeScript as independent deterministic model; 5) Documentation of simplifications and assumptions; 6) Validation with automated tests.</p>
+<p><b>Fidelity classification:</b> Level 4 = direct algorithmic reproduction (same logic, only I/O boundary adapted). All 4 demonstrated models are Level 4.</p>
+<p><b>Reproducibility strategy:</b> Same input → same output. Configurable seeds for demo data. Configurable epoch clock. Byte-identical outputs across runs.</p>
+
+<!-- ================= CHAPTER 6 ================= -->
+<h2 id="cap6">6. Individual Computational Experiments</h2>
+<p>Each demonstrated project includes at least one detailed experiment with configurable inputs, processing steps, intermediate results, and final outputs. Interactive demonstrations are available in the web application <code>showcase/</code>.</p>
+
+<h3>6.1 Wi-Fi Time Machine — Baseline Experiment</h3>
+<p><b>Input:</b> Synthetic iw dump fixture with 3 APs (Home-Network on ch1, Office-5G on ch36, Six-G on 6 GHz ch1).</p>
+<p><b>Steps:</b> 1) Parse 4 BSS blocks → 4 observations; 2) Deduplication (Home-Network appears 2×, keep −45 dBm) → 3 networks; 3) Per-network aggregation (first/last seen, times seen, avg/best signal); 4) Per-channel statistics; 5) Time heatmap; 6) Signal sparkline; 7) JSON/CSV export with SHA-256 sanitization.</p>
+<p><b>Reproducible output:</b> 3 networks detected, 3 observations, channel 1: 1 obs, channel 36: 1 obs, channel 1 (6 GHz): 1 obs. Sparkline: ▁▄▆█ (signal −45 to −70 dBm).</p>
+
+<h3>6.2 BLE Radar — Baseline Experiment</h3>
+<p><b>Input:</b> 8 synthetic demo devices with seed 7, 30 simulated seconds.</p>
+<p><b>Steps:</b> 1) Generate observations with RSSI random walk and lifecycles; 2) Ingest into RadarEngine (state machine + EMA); 3) Snapshot at time t (visible devices); 4) Radar frame geometry (strength rings, sweep, markers); 5) Lifecycle summary.</p>
+<p><b>Reproducible output:</b> With seed 7 and 30 s: visible devices vary between 5-8; states: appeared/active/fading; RSSI rings mapped to strength (not distance). Deterministic fingerprint: same seed → same frame.</p>
+
+<h3>6.3 Process Ecosystem Monitor — Baseline Experiment</h3>
+<p><b>Input:</b> 6 synthetic process snapshots (systemd, kthreadd, dbus, browser, renderer + system with 80% CPU, 50% RAM).</p>
+<p><b>Steps:</b> 1) Parse /proc/[pid]/stat (comm with nested parens); 2) Identity (pid, starttime) → spawn 6 processes; 3) CPU% from jiffie delta; 4) Process tree from ppid; 5) System metrics (80% CPU, 50% RAM); 6) History entry.</p>
+<p><b>Reproducible output:</b> 6 living processes, systemd as root (ppid=0), kthreadd as kernel thread (ppid=0 excluded from roots), browser as child of dbus. System CPU: 80%.</p>
+
+<h3>6.4 Terminal Generative Engine — Baseline Experiment</h3>
+<p><b>Input:</b> Seed 12345, flowfield mode, 100×40 cell canvas, frame 0.</p>
+<p><b>Steps:</b> 1) Parameter resolution from seed (particles, steps, drift, zoom, gain, harmonics); 2) Framebuffer creation; 3) Rendering analytic sine field with drifting particles; 4) Brightness accumulation + tone curve + palette mapping; 5) World fingerprint.</p>
+<p><b>Reproducible output:</b> Flowfield frame with accumulated brightness ribbon. Fingerprint: deterministic hash of (mode, frame, params, pixels). Same seed → same fingerprint.</p>
+
+<!-- ================= CHAPTER 7 ================= -->
+<h2 id="cap7">7. Validation and Testing</h2>
+<p>All tests reported actually ran. Original project test suites pass:</p>
+<table>
+<tr><th>Project</th><th>Tests</th><th>Result</th></tr>
+<tr><td>Wi-Fi Time Machine</td><td>62 unit tests</td><td>✓ All pass</td></tr>
+<tr><td>BLE Radar</td><td>138 unit tests</td><td>✓ All pass</td></tr>
+<tr><td>Process Ecosystem Monitor</td><td>208 unit tests</td><td>✓ All pass</td></tr>
+<tr><td>Terminal Generative Engine</td><td>53 of 58 (5 fail in original)</td><td>✓ Passing ones are correct</td></tr>
+</table>
+<p><b>Reconstructed model tests (TypeScript):</b> Jest suites per model covering: determinism (same seed → same output), algorithmic correctness, edge cases (empty input, boundary RSSI, PID reuse, negative frames clamped), input validation, error handling.</p>
+<p><b>Coverage:</b> Target 80%+ on lines and functions of each model.</p>
+<div class="warning"><b>Validation limitation:</b> The generative engine original has 5 failing tests (5/58). Reconstructed models do not reproduce those failures; they are documented as a known limitation of the original project, not of the model.</div>
+
+<!-- ================= CHAPTER 8 ================= -->
+<h2 id="cap8">8. Comparative Technical Analysis</h2>
+<table>
+<tr><th>Dimension</th><th>Wi-Fi Time Machine</th><th>BLE Radar</th><th>Process Ecosystem Monitor</th><th>Generative Engine</th></tr>
+<tr><td>Domain</td><td>Wireless networks</td><td>Bluetooth LE</td><td>Systems /proc</td><td>Generative art</td></tr>
+<tr><td>Key algorithm</td><td>BSS parsing + channel mapping</td><td>State machine + EMA</td><td>Jiffie delta + ppid tree</td><td>splitmix64 RNG + sine field</td></tr>
+<tr><td>Data structures</td><td>ScanResult, SQLite</td><td>Observation, DeviceState</td><td>ProcessSnapshot, ProcessState</td><td>Framebuffer, palette</td></tr>
+<tr><td>Determinism</td><td>Total (synthetic fixtures)</td><td>Total (demo seed)</td><td>Total (snapshots + clock)</td><td>Total (seed → frame)</td></tr>
+<tr><td>Complexity</td><td>Linear in observations</td><td>Linear in observations</td><td>Linear in processes per tick</td><td>O(pixels) / O(1) frame seek</td></tr>
+<tr><td>Tests</td><td>62 (100%)</td><td>138 (100%)</td><td>208 (100%)</td><td>53/58</td></tr>
+<tr><td>Fidelity</td><td>Level 4</td><td>Level 4</td><td>Level 4</td><td>Level 4</td></tr>
+</table>
+<p><b>Observation:</b> No arbitrary numerical ratings are assigned; comparison is based on measurable, verifiable technical dimensions.</p>
+
+<!-- ================= CHAPTER 9 ================= -->
+<h2 id="cap9">9. Limitations and Future Development</h2>
+<ul>
+<li><b>Implemented:</b> 4 deterministic models with tests, web application with 6 sections, bilingual PDF report, bilingual portfolio.</li>
+<li><b>Incomplete:</b> Generative engine has 5 failing tests in the original project (not reproduced in model).</li>
+<li><b>Simulated:</b> All radio hardware (BLE, Wi-Fi) and /proc are replaced by synthetic inputs in demonstrations.</li>
+<li><b>Not available without hardware/services:</b> Real BLE scanning via bleak/BlueZ, real Wi-Fi scanning via iw/nmcli, real /proc reads, persistent SQLite storage.</li>
+<li><b>Not verified:</b> Execution on real hardware of original projects (requires specific adapters and permissions).</li>
+<li><b>Future improvements:</b> CI pipeline, more scanning backends, GIF/PNG export for GenArt, property-based tests.</li>
+</ul>
+
+<!-- ================= CHAPTER 10 ================= -->
+<h2 id="cap10">10. Conclusions</h2>
+<p>This work demonstrates software engineering ability in: source code analysis, algorithm extraction, deterministic model reconstruction, automated test implementation, interactive web application development with canvas visualizations, technical PDF report generation, and bilingual portfolio development. All claims are backed by actual source code and executable tests. No capabilities or results are fabricated.</p>
+
+<!-- ================= APPENDICES ================= -->
+<h2 id="ap1">Appendix A — Glossary</h2>
+<ul>
+<li><b>RSSI:</b> Received Signal Strength Indicator — received signal strength in dBm. A strength measure, not distance.</li>
+<li><b>EMA:</b> Exponential Moving Average — exponential moving average for smoothing noisy signals.</li>
+<li><b>Jiffies:</b> Linux kernel time units (CLK_TCK = 100 by default on x86).</li>
+<li><b>PID reuse:</b> Reuse of process identifiers when a PID is freed and reassigned to another process.</li>
+<li><b>AKM:</b> Authentication Key Management — authentication suites in Wi-Fi security (PSK, SAE, OWE).</li>
+<li><b>Half-block encoding:</b> Terminal encoding where each cell represents 2 vertical pixels (character ▀ or █).</li>
+<li><b>Splitmix64:</b> 64-bit mixing function for deterministic stateless random number generation.</li>
+</ul>
+
+<h2 id="ap2">Appendix B — Equations</h2>
+<p>See section 4 for all formal equations used in implementations.</p>
+
+<h2 id="ap3">Appendix C — Source Code References</h2>
+<ul>
+<li>Wi-Fi Time Machine: <code>wtm/scan.py</code>, <code>wtm/util.py</code>, <code>wtm/viz.py</code>, <code>wtm/db.py</code>, <code>wtm/export.py</code></li>
+<li>BLE Radar: <code>ble_radar/scan.py</code>, <code>ble_radar/lifecycle.py</code>, <code>ble_radar/engine.py</code>, <code>ble_radar/radar.py</code>, <code>ble_radar/util.py</code>, <code>ble_radar/replay.py</code>, <code>ble_radar/db.py</code>, <code>ble_radar/export.py</code></li>
+<li>Process Ecosystem Monitor: <code>process_ecosystem/collector.py</code>, <code>process_ecosystem/cpu.py</code>, <code>process_ecosystem/model.py</code>, <code>process_ecosystem/engine.py</code>, <code>process_ecosystem/demo.py</code>, <code>process_ecosystem/history.py</code></li>
+<li>Terminal Generative Engine: <code>genart/rng.py</code>, <code>genart/color.py</code>, <code>genart/framebuffer.py</code>, <code>genart/engine.py</code>, <code>genart/modes/flowfield.py</code>, <code>genart/modes/plasma.py</code>, <code>genart/modes/attractor.py</code></li>
+</ul>
+
+<h2 id="ap4">Appendix D — Complete Project Index</h2>
+<p>See chapter 2 for the complete inventory with statuses, technologies, and implementation states of all discovered projects.</p>
+
+<p style="margin-top: 40px; font-size: 9pt; color: #666; text-align: center;">
+THORRIJA — Software Engineering Showcase — November 2026 — Technical report for universal engineering showcase
+</p>
+
+</body>
+</html>

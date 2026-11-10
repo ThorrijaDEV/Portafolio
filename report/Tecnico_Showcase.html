@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Thorrija — Engineering Showcase: Qué hice y cómo funciona</title>
+<style>
+@page {
+  size: A4;
+  margin: 2cm 2cm 2cm 2cm;
+  @bottom-center {
+    content: "Thorrija — Engineering Showcase — Technical Dossier — Page " counter(page) " of " counter(pages);
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+  @top-right {
+    content: "Rev 1.0 — Nov 2026";
+    font-family: 'DejaVu Sans', monospace;
+    font-size: 7pt;
+    color: #666;
+  }
+}
+@page :first {
+  margin-top: 0;
+}
+body {
+  font-family: 'DejaVu Sans', sans-serif;
+  font-size: 10pt;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+h1 { font-size: 26pt; color: #0a0a0b; border-bottom: 3px solid #0a0a0b; padding-bottom: 10px; margin-top: 20px; }
+h2 { font-size: 16pt; color: #0a0a0b; border-bottom: 2px solid #0a0a0b; padding-bottom: 6px; margin-top: 24px; }
+h3 { font-size: 12pt; color: #2a2a2e; margin-top: 16px; margin-bottom: 6px; }
+p { margin: 6px 0; text-align: justify; }
+code { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; background: #0a0a0b; color: #e8e8ea; padding: 1px 4px; border-radius: 2px; }
+pre { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; background: #0a0a0b; color: #e8e8ea; padding: 10px; border-radius: 4px; margin: 8px 0; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 8.5pt; }
+th { background: #0a0a0b; color: #fff; padding: 5px 7px; text-align: left; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.03em; }
+td { border: 1px solid #2a2a2e; padding: 4px 7px; font-size: 8.5pt; }
+tr:nth-child(even) td { background: #f4f4f5; }
+.cover { text-align: center; padding-top: 80px; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.cover h1 { font-size: 36pt; letter-spacing: 3px; color: #0a0a0b; margin-bottom: 20px; border: none; }
+.cover .subtitle { font-size: 15pt; color: #7c3aed; margin-top: 10px; }
+.cover .description { font-size: 10.5pt; color: #666; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.cover .author { font-size: 11pt; color: #888; margin-top: 50px; }
+.cover .author div { margin: 3px 0; }
+.section-break { page-break-after: always; }
+.card { border: 1px solid #2a2a2e; padding: 12px; margin: 10px 0; border-radius: 4px; background: #fafafa; }
+.fidelity-badge { font-family: 'DejaVu Sans Mono', monospace; font-size: 8pt; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
+.level-4 { color: #10b981; background: #f0fdf4; border: 1px solid #10b981; }
+.level-3 { color: #f59e0b; background: #fffbeb; border: 1px solid #f59e0b; }
+.warning { background: #fffbeb; border: 1px solid #f59e0b; padding: 8px; margin: 10px 0; border-radius: 4px; }
+.equation { background: #f4f4f5; border-left: 3px solid #7c3aed; padding: 8px 12px; margin: 10px 0; font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; }
+.screenshot { width: 100%; max-width: 700px; margin: 8px auto; display: block; border: 1px solid #2a2a2e; border-radius: 4px; }
+.screenshot-caption { font-size: 8pt; color: #666; text-align: center; margin-top: 4px; font-family: 'DejaVu Sans Mono', monospace; }
+.toc { font-family: 'DejaVu Sans Mono', monospace; font-size: 9pt; }
+.toc a { color: #0a0a0b; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc-item { margin: 4px 0; }
+.toc-sub { margin-left: 20px; font-size: 8pt; color: #666; }
+ul { margin: 6px 0; padding-left: 20px; }
+li { margin: 3px 0; }
+.note { font-size: 8pt; color: #666; font-style: italic; }
+.page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>THORRIJA</h1>
+  <div class="subtitle">Engineering Showcase — Qué hice y cómo funciona</div>
+  <div class="description">
+    Cinco modelos computacionales deterministas reconstruidos desde código fuente.
+    Todo se calcula en el momento. Nada está hardcodeado. Misma entrada, misma salida.
+  </div>
+  <div class="author">
+    <div>Autor: Thorrija (Rubén N.)</div>
+    <div>España</div>
+    <div>Noviembre 2026</div>
+    <div>GitHub: github.com/ThorrijaDEV</div>
+  </div>
+</div>
+
+<div class="section-break"></div>
+
+<h2>1. Qué construí</h2>
+<p>Construí un Engineering Showcase: una aplicación web con cinco laboratorios interactivos. Cada laboratorio es un modelo computacional determinista reconstruido a partir del código fuente de proyectos originales. No ejecuto los proyectos originales dentro de las demostraciones. Todo lo que se ve en pantalla se calcula en el momento a partir de tu entrada.</p>
+
+<p>Los cinco laboratorios están en <code>/home/thorrija/showcase/</code> y los modelos en <code>/home/thorrija/models/</code>.</p>
+
+<table>
+<tr><th>Laboratorio</th><th>Qué hace</th><th>Código fuente original</th></tr>
+<tr><td>Wi-Fi Time Machine</td><td>Historial de entornos Wi-Fi: escanea, mapea canales, muestra calor del tiempo</td><td>wifi-time-machine</td></tr>
+<tr><td>BLE Radar</td><td>Radar de dispositivos Bluetooth: ciclo de vida, fuerza de señal, ángulo por hash de MAC</td><td>ble-radar</td></tr>
+<tr><td>Process Ecosystem Monitor</td><td>Vida de procesos Linux: nacimiento, muerte, CPU por jiffies, árbol de procesos</td><td>process-ecosystem-monitor</td></tr>
+<tr><td>Terminal Generative Engine</td><td>Arte generativo determinista: flowfield, plasma, attractor</td><td>terminal-generative-engine</td></tr>
+<tr><td>The Box</td><td>Sustrato relacional: seis reglas de reescritura, linaje y fusiones</td><td>the-box</td></tr>
+</table>
+
+<div class="section-break"></div>
+
+<h2>2. Wi-Fi Time Machine</h2>
+<p><strong>Qué hace:</strong> Toma un volcado de escaneo Wi-Fi (formato iw o nmcli) y lo convierte en una línea de tiempo de calor: qué redes aparecieron en qué momentos, con qué fuerza y en qué canales.</p>
+
+<h3>Cómo funciona</h3>
+<ul>
+<li>Parsea bloques BSS del salida de <code>iw scan dump</code> o salida de nmcli.</li>
+<li>Deduplica por BSSID: si la misma red apareció dos veces, se queda con la señal más fuerte.</li>
+<li>Mapea frecuencia a canal 802.11 (2.4 GHz, 5 GHz, 6 GHz).</li>
+<li>Infere seguridad (WPA2, WPA3) de los suites de autenticación.</li>
+<li>Construye un mapa de calor tiempo × buckets: cada celda muestra la señal media de esa red en ese intervalo.</li>
+<li>Exporta JSON/CSV con direcciones MAC sanitizadas (SHA-256 truncado).</li>
+</ul>
+
+<img class="screenshot" src="wtm.png" alt="Wi-Fi Time Machine">
+<div class="screenshot-caption">Wi-Fi Time Machine: entrada de escaneo, mapa de calor de tiempo, actividad por canal, sparkline de señal.</div>
+
+<div class="section-break"></div>
+
+<h2>3. BLE Radar</h2>
+<p><strong>Qué hace:</strong> Detecta dispositivos Bluetooth LE cercanos, les sigue el ciclo de vida (aparecido, activo, desvaneciendo, desaparecido) y los dibuja en un radar donde el ángulo es un hash de su dirección MAC y el anillo es la fuerza de señal RSSI (no distancia).</p>
+
+<h3>Cómo funciona</h3>
+<ul>
+<li>Recibe observaciones BLE: dirección MAC, nombre, RSSI, timestamp.</li>
+<li>Suaviza el RSSI con EMA (alpha = 0.4): cada lectura nueva mezcla 40 % nueva, 60 % anterior.</li>
+<li>Clasifica la fuerza en bandas: strong (≥-40), near (≥-55), mid (≥-70), far (≥-85), weak.</li>
+<li>Calcula un ángulo estable a partir del hash SHA-256 de la dirección MAC. Es una convención visual, no una orientación real: BLE no da orientación.</li>
+<li>Máquina de estado: un nodo desaparece si no recibe nada en 30 segundos.</li>
+</ul>
+
+<img class="screenshot" src="ble.png" alt="BLE Radar">
+<div class="screenshot-caption">BLE Radar: dispositivos activos, anillos de fuerza RSSI, línea de barrido, historial de dispositivos.</div>
+
+<div class="section-break"></div>
+
+<h2>4. Process Ecosystem Monitor</h2>
+<p><strong>Qué hace:</strong> Toma instantáneas de procesos estilo /proc/[pid]/stat y construye un árbol de procesos: quién es padre de quién, quién consumió más CPU, quiénes murieron, quiénes reutilizaron PID.</p>
+
+<h3>Cómo funciona</h3>
+<ul>
+<li>Parsea /proc/[pid]/stat (incluyendo nombres con paréntesis anidados), /proc/[pid]/statm, /proc/stat, /proc/meminfo, /proc/loadavg.</li>
+<li>Calcula CPU% del sistema: busy delta / total delta de /proc/stat.</li>
+<li>Calcula CPU% de cada proceso: delta de (utime+stime) jiffies dividido por (intervalo × CLK_TCK × núcleos).</li>
+<li>Identidad del proceso: (pid, starttime). Si el starttime cambia, es un proceso nuevo que reutilizó el PID del anterior.</li>
+<li>Árbol de procesos: se construye desde ppid. Los huérfanos se reasignan a init (pid 1).</li>
+</ul>
+
+<img class="screenshot" src="pem.png" alt="Process Ecosystem Monitor">
+<div class="screenshot-caption">Process Ecosystem Monitor: instantáneas de procesos, eventos del tick, árbol de procesos, tabla de estados.</div>
+
+<div class="section-break"></div>
+
+<h2>5. Terminal Generative Engine</h2>
+<p><strong>Qué hace:</strong> Genera arte generativo determinista a partir de una semilla: flowfield, plasma o attractor. Misma semilla + mismo frame = mismo resultado siempre. Puede saltar a cualquier frame sin calcular los anteriores (O(1)).</p>
+
+<h3>Cómo funciona</h3>
+<ul>
+<li><strong>RNG sin estado:</strong> splitmix64-style. Cada valor es una función pura de (semilla, frame, salt, índice). No hay estado oculto.</li>
+<li><strong>Paletas:</strong> colores continuos interpolados linealmente entre paradas.</li>
+<li><strong>xterm-256:</strong> mapeo de color.</li>
+<li><strong>Framebuffer:</strong> W×H pixel canvas, codificación de píxeles de medio bloque terminal.</li>
+<li><strong>Modos:</strong> flowfield (campo de ángulo analítico de senos), plasma (fórmulas cerradas de color), attractor (mapa extraño de Clifford/Dejong).</li>
+<li><strong>Huella del mundo:</strong> SHA-256 sobre modo + frame + parámetros + píxeles. Mismo conjunto de parámetros, misma huella.</li>
+</ul>
+
+<img class="screenshot" src="gen.png" alt="Terminal Generative Engine">
+<div class="screenshot-caption">Terminal Generative Engine: semilla, modo, canvas de píxeles deterministas, huella del mundo.</div>
+
+<div class="section-break"></div>
+
+<h2>6. The Box</h2>
+<p><strong>Qué hace:</strong> The Box es un sustrato relacional: un grafo de arcos y nodos donde seis reglas de reescritura modifican la estructura. A partir de esas reglas emergen linaje (quién engendró a quién) e identidad (quiénes se fusionaron). Nada en el kernel almacena identidad, linaje o generación: son propiedades derivadas de las etiquetas de los arcos.</p>
+
+<h3>El sustrato (kernel)</h3>
+<ul>
+<li><strong>Nodo:</strong> {id, tag, payload (vector de números), born}</li>
+<li><strong>Arco (relación):</strong> {id, src, dst, tag, peso, clock}</li>
+<li><strong>Ids compartidos:</strong> nodos y arcos comparten el mismo numerador de ids. Cualquier id puede referirse a un nodo o a un arco.</li>
+<li><strong>Segundo orden:</strong> un arco puede tener otro arco como extremo.</li>
+</ul>
+
+<h3>Las seis reglas</h3>
+<table>
+<tr><th>Regla</th><th>Qué hace</th></tr>
+<tr><td>GATHER</td><td>Dos partidarios del mismo hub se conectan directamente.</td></tr>
+<tr><td>BOND</td><td>El ancla y un vecino de salida que comparten dos vecinos de entrada se enlazan.</td></tr>
+<tr><td>TAG_PROP</td><td>El ancla copia la etiqueta de un vecino de salida.</td></tr>
+<tr><td>QUIET</td><td>Un nodo que no ha recibido nada en 30 pasos se marca como QUIET (tag 5).</td></tr>
+<tr><td>DESCEND</td><td>Un nodo QUIET con espacio genera un hijo con su etiqueta y payload con pequeño jitter.</td></tr>
+<tr><td>FUSE</td><td>Dos hermanos (mismo padre vía DESCEND) con misma etiqueta y payload cercano se identifican: el gemelo se retira y un arco EQUIV queda como testigo de la fusión.</td></tr>
+</table>
+
+<h3>Motor</h3>
+<ul>
+<li>Cuatro políticas de selección: canonical (sin semilla, sitio estructuralmente más pequeño), uniform, weighted, roundrobin.</li>
+<li>Cada paso: enumera todos los sitios posibles, selecciona uno, aplica la regla, registra el evento.</li>
+</ul>
+
+<h3>Identidad y linaje (derivados, no campos del kernel)</h3>
+<ul>
+<li><strong>Descenso:</strong> quién engendró a quién, a partir de arcos DESCEND.</li>
+<li><strong>Profundidad de linaje:</strong> cuántos niveles tiene cada nodo en el árbol de descendencia.</li>
+<li><strong>Identidad:</strong> qué nodos se fusionaron, a partir de arcos EQUIV (testigos de fusión).</li>
+<li><strong>Fused fraction:</strong> qué porcentaje de nodos participó en alguna fusión.</li>
+</ul>
+
+<h3>Métricas estructurales</h3>
+<ul>
+<li><strong>degree_tables:</strong> grados de entrada y salida sobre arcos nodo-nodo; coeficiente de Gini.</li>
+<li><strong>components:</strong> componentes conexos (union-find).</li>
+<li><strong>beta0_beta1:</strong> Euler-exacto sobre el grafo de incidencia; beta1 = ‖arcs‖ − ‖objects‖ + beta0.</li>
+<li><strong>component_size_profile:</strong> n, max, mean, entropy, largest_frac.</li>
+<li><strong>modularity:</strong> determinista Louvain (un solo nivel).</li>
+</ul>
+
+<h3>Observables nombrados (14)</h3>
+<ul>
+<li>n_nodes, n_arcs, arc_density, beta0, beta1</li>
+<li>mean_in_degree, mean_out_degree, max_in_degree, gini_in_degree</li>
+<li>largest_component_frac, tag_entropy</li>
+<li>mean_lineage_depth, max_lineage_depth</li>
+<li>n_identity_classes, n_fusion_classes, fused_nodes, fused_fraction</li>
+</ul>
+
+<h3>Null models</h3>
+<ul>
+<li><strong>degree-preserving rewire:</strong> doble intercambio de bordes; preserva cada grado de entrada y salida; destruye estructura de orden superior (Milo et al. 2002).</li>
+<li><strong>tag permutation:</strong> preserva el multiset de etiquetas; destruye qué nodo lleva qué etiqueta.</li>
+<li><strong>homogeneous:</strong> etiquetas borradas, pesos normalizados; conserva topología.</li>
+</ul>
+
+<h3>p-Values</h3>
+<p>P-valor empírico de un lado con corrección +1:
+<p class="equation">p = (count(null ≥ real) + 1) / (null_count + 1)</p>
+Resolución del piso: 1/(null_count + 1). Si el piso supera alpha (0.01), el test no es attainable.</p>
+
+<h3>Provenance</h3>
+<p>El fingerprint del experimento es BLAKE2b-16 sobre: name, seed sum, steps, substrate_seed, ruleset_id, ruleset_hash, config, fingerprint_version. Dos records con el mismo fingerprint son el mismo experimento.</p>
+
+<h3>Limitaciones</h3>
+<ul>
+<li><strong>The Box: fidelidad Nivel 3.</strong> El BLAKE2b está reimplementado en TypeScript puro; no es byte-compatible con Python hashlib.blake2b. Los hashes de grafo, unit_hash y huellas de experimento difieren de Python. Las propiedades estructurales (nodos, grados, linaje, observables) son idénticas.</li>
+<li>Wi-Fi Time Machine y BLE Radar no acceden a hardware real; usan datos sintéticos.</li>
+<li>Terminal Generative Engine: no tiene exportación de archivo (solo arrays de píxeles).</li>
+<li>No hay base de datos SQLite; todo en memoria.</li>
+</ul>
+
+<img class="screenshot" src="the-box.png" alt="The Box laboratory">
+<div class="screenshot-caption">The Box: sustrato arc-incidente, nodos por etiqueta, arcos por peso, nodos retirados desvanecidos.</div>
+
+<div class="section-break"></div>
+
+<h2>7. Cómo ejecutarlo</h2>
+<pre>
+# Showcase (web)
+cd /home/thorrija/showcase
+npm run dev      # servidor de desarrollo en http://localhost:3000
+npm run build    # construcción para producción en dist/
+npm run preview  # previsualizar el build
+
+# Modelos (TypeScript / Jest)
+cd /home/thorrija/models
+npm test         # 102 pruebas, todas pasan
+</pre>
+
+<p>No necesitas claves de API, hardware Wi-Fi o Bluetooth, ni /proc del sistema anfitrión. Todo funciona con datos sintéticos.</p>
+
+<div class="section-break"></div>
+
+<h2>8. Limitaciones (honesto)</h2>
+<ul>
+<li><strong>The Box: fidelidad Nivel 3.</strong> El BLAKE2b está reimplementado en TypeScript puro; no es byte-compatible con Python hashlib.blake2b. Los hashes de grafo, unit_hash y huellas de experimento difieren de Python. Las propiedades estructurales (nodos, grados, linaje, observables) son idénticas.</li>
+<li>Wi-Fi Time Machine y BLE Radar no acceden a hardware real; usan datos sintéticos.</li>
+<li>Terminal Generative Engine: no tiene exportación de archivo (solo arrays de píxeles).</li>
+<li>No hay base de datos SQLite; todo en memoria.</li>
+</ul>
+
+<div class="section-break"></div>
+
+<h2>Repositorios</h2>
+<ul>
+<li><a href="https://github.com/ThorrijaDEV/showcase">github.com/ThorrijaDEV/showcase</a> — Showcase web</li>
+<li><a href="https://github.com/ThorrijaDEV/models">github.com/ThorrijaDEV/models</a> — Modelos deterministas</li>
+<li><a href="https://github.com/ThorrijaDEV/Portafolio">github.com/ThorrijaDEV/Portafolio</a> — Portafolio</li>
+</ul>
+
+</body>
+</html>

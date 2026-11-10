@@ -264,8 +264,15 @@
 
     /* ------------------------------------------------------------ Año footer */
 
-    var year = document.getElementById('year');
-    if (year) {
-        year.textContent = String(new Date().getFullYear());
+    /* applyTranslations() reescribe el innerHTML del pie, así que el nodo
+       #year se recrea en cada cambio de idioma: hay que volver a buscarlo. */
+    function setFooterYear() {
+        var year = document.getElementById('year');
+        if (year) {
+            year.textContent = String(new Date().getFullYear());
+        }
     }
+
+    setFooterYear();
+    document.addEventListener('thorrija:lang', setFooterYear);
 })();

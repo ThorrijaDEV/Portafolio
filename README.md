@@ -5,6 +5,16 @@ Publicado con GitHub Pages en:
 
 
 
+## Engineering Showcase
+
+La sección "Engineering Showcase" da entrada a las cuatro ediciones del
+showcase (Quick EN/ES, Technical EN/ES) y a las cuatro ediciones
+anteriores. Los PDF se sirven desde este mismo repositorio, en
+`report/`, junto con sus fuentes HTML, las capturas que ilustran y los
+scripts que los generan y validan.
+
+Detalle completo en [`report/README.md`](report/README.md).
+
 ## Certificaciones
 
 - **Math 101**: `assets/certs/math-101.png`, con variante `.webp` servida
