@@ -1398,6 +1398,46 @@ section {
     pointer-events: none;
 }
 
+/* Par de imágenes en la credencial del NASA: foto del equipo y certificado
+   uno al lado del otro, dentro del mismo marco. */
+
+.cred-visual-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+    max-height: 100%;
+}
+
+.cred-visual-pair picture {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    place-items: center;
+    position: static;
+    inset: auto;
+}
+
+.cred-visual-pair img {
+    display: block;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 1px solid var(--line-soft);
+    border-radius: 2px;
+    box-shadow: var(--doc-shadow);
+    transition: transform 0.9s var(--ease);
+}
+
+.cred-visual:hover .cred-visual-pair img {
+    transform: scale(1.035);
+}
+
 .cred-plate {
     display: flex;
     flex-direction: column;
