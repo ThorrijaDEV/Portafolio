@@ -1471,6 +1471,31 @@ section {
     padding-top: 0.5rem;
 }
 
+/* Enlaces al trabajo de una credencial (CataclismoTeam/CATACLISMO) */
+
+.cred-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-top: auto;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line-soft);
+}
+
+.cred-link {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s var(--ease);
+}
+
+.cred-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
 @media (min-width: 900px) {
     .cred-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
