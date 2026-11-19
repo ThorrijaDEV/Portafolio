@@ -158,7 +158,6 @@ const I18N = {
     certs_desc_nasa: "NASA Space Apps participation certificate: outstanding participation and efforts to address the 5 challenges we face on Earth and in space. November 14–15, 2026.",
     certs_link_repo: "Repository — CataclismoTeam/CATACLISMO",
     certs_link_site: "Website — CATACLISMO",
-    certs_link_cert: "NASA Certificate — nasa-space-apps-2026.png",
     cred_visual_open: "Open file",
 
     // Contact
@@ -343,7 +342,6 @@ const I18N = {
     certs_desc_nasa: "Certificado de participación de la NASA: participación destacada y esfuerzo para abordar los 5 retos que enfrentamos en la Tierra y en el espacio. 14–15 de noviembre de 2026.",
     certs_link_repo: "Repositorio — CataclismoTeam/CATACLISMO",
     certs_link_site: "Sitio web — CATACLISMO",
-    certs_link_cert: "Certificado NASA — nasa-space-apps-2026.png",
     cred_visual_open: "Abrir archivo",
 
     // Contact
