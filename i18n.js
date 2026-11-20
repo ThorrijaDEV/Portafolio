@@ -11,6 +11,7 @@ const I18N = {
     // Navigation
     nav_perfil: "Profile",
     nav_trabajo: "Work",
+    nav_research: "Research",
     nav_capacidades: "Capabilities",
     nav_certificaciones: "Certifications",
     nav_contacto: "Contact",
@@ -57,6 +58,23 @@ const I18N = {
     manifesto_exp: "Experimentation",
     manifesto_analysis: "Analysis",
     manifesto_reconstruction: "Reconstruction",
+
+    // Research documents
+    research_eyebrow: "Research documents",
+    research_title: "Presentation & The Box",
+    research_desc: "My technical presentation for research teams and the full documentation of The Box substrate, in English and Spanish.",
+    research_kind_presentation: "Presentation",
+    research_desc_presentation: "16 slides: The Box, NOX, ECHO, SINGULARITY, HERMES, negative results and personal profile.",
+    research_pages_presentation: "16 pages · PDF",
+    research_kind_science: "The science behind the structure",
+    research_desc_science: "Foundations, experiments and results of The Box substrate.",
+    research_pages_science_en: "80 pages · PDF",
+    research_desc_science_es: "Spanish edition: foundations, experiments and results of The Box substrate.",
+    research_pages_science_es: "60 pages · PDF",
+    research_kind_master: "Master documentation",
+    research_desc_master: "Complete reference of The Box kernel, rules and experiments.",
+    research_pages_master: "124 pages · PDF",
+    research_repo_note: "Code and documentation: github.com/ThorrijaDEV/the-box-info · github.com/ThorrijaDEV/thorrija-research-presentation",
 
     // Projects
     projects_eyebrow: "Selected work",
@@ -196,6 +214,7 @@ const I18N = {
     // Navigation
     nav_perfil: "Perfil",
     nav_trabajo: "Trabajo",
+    nav_research: "Investigación",
     nav_capacidades: "Capacidades",
     nav_certificaciones: "Certificaciones",
     nav_contacto: "Contacto",
@@ -242,6 +261,23 @@ const I18N = {
     manifesto_exp: "Experimentación",
     manifesto_analysis: "Análisis",
     manifesto_reconstruction: "Reconstrucción",
+
+    // Research documents
+    research_eyebrow: "Documentos de investigación",
+    research_title: "Presentación y The Box",
+    research_desc: "Mi presentación técnica para equipos de investigación y la documentación completa del sustrato The Box, en inglés y español.",
+    research_kind_presentation: "Presentación",
+    research_desc_presentation: "16 diapositivas: The Box, NOX, ECHO, SINGULARITY, HERMES, resultados negativos y perfil personal.",
+    research_pages_presentation: "16 páginas · PDF",
+    research_kind_science: "La ciencia detrás de la estructura",
+    research_desc_science: "Fundamentos, experimentos y resultados del sustrato The Box.",
+    research_pages_science_en: "80 páginas · PDF",
+    research_desc_science_es: "Versión en español: fundamentos, experimentos y resultados del sustrato The Box.",
+    research_pages_science_es: "60 páginas · PDF",
+    research_kind_master: "Documentación maestra",
+    research_desc_master: "Referencia completa del kernel, reglas y experimentos de The Box.",
+    research_pages_master: "124 páginas · PDF",
+    research_repo_note: "Código y documentación: github.com/ThorrijaDEV/the-box-info · github.com/ThorrijaDEV/thorrija-research-presentation",
 
     // Projects
     projects_eyebrow: "Trabajo seleccionado",
